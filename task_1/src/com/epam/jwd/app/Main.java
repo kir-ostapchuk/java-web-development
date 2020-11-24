@@ -18,6 +18,10 @@ public class Main {
         Triangle[] triangles = createTriangles(2);
         Square[] squares = createSquares(1);
 
+        logPoints(points);
+        logLines(lines);
+        logTriangle(triangles);
+        logSquares(squares);
     }
 
     private static Point[] createPoints(int length) {
@@ -63,5 +67,32 @@ public class Main {
         }
 
         return squares;
+    }
+
+    private static void logPoints(Point[] points) {
+        int i = 0;
+        do {
+            LOGGER.info(points[i].toString());
+            i++;
+        }
+        while (i < points.length);
+    }
+
+    private static void logLines(Line[] lines) {
+        for (Line line : lines) {
+            line.toString();
+        }
+    }
+
+    private static void logTriangle(Triangle[] triangles) {
+        for (Triangle triangle : triangles) {
+            triangle.toString();
+        }
+    }
+
+    private static void logSquares(Square[] squares) {
+        for (Square square : squares) {
+            square.toString();
+        }
     }
 }
