@@ -56,7 +56,6 @@ public class Main {
                     new Point(i + 2, i + 8),
                     new Point(i, i));
         }
-
         return triangles;
     }
 
@@ -69,7 +68,6 @@ public class Main {
                     new Point(i + 2, i + 7),
                     new Point(0, i));
         }
-
         return squares;
     }
 
@@ -90,13 +88,21 @@ public class Main {
 
     private static void logTriangle(Triangle[] triangles) {
         for (Triangle triangle : triangles) {
-            LOGGER.info(triangle.toString());
+            if (!triangle.validate()) {
+                LOGGER.info(triangle.toString());
+            } else {
+                LOGGER.error("Cannot exist " + triangle.toString());
+            }
         }
     }
 
     private static void logSquares(Square[] squares) {
         for (Square square : squares) {
-            LOGGER.info(square.toString());
+            if (!square.validate()) {
+                LOGGER.info(square.toString());
+            } else {
+                LOGGER.error("Cannot exist " + square.toString());
+            }
         }
     }
 
