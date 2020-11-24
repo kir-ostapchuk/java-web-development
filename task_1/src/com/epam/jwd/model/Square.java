@@ -1,6 +1,10 @@
 package com.epam.jwd.model;
 
-public class Square {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Square implements Validator{
     private Point point1;
     private Point point2;
     private Point point3;
@@ -53,5 +57,32 @@ public class Square {
                 ", point3=" + point3 +
                 ", point4=" + point4 +
                 '}';
+    }
+
+    @Override
+    public boolean validate() {
+        boolean result = false;
+
+        List<Double> sides = new ArrayList<>();
+
+        double side1 = Math.hypot(point1.getX() - point2.getX(), point1.getY() - point2.getY());
+        double side2 = Math.hypot(point2.getX() - point3.getX(), point2.getY() - point3.getY());
+        double side3 = Math.hypot(point3.getX() - point4.getX(), point3.getY() - point4.getY());
+        double side4 = Math.hypot(point1.getX() - point4.getX(), point1.getY() - point4.getY());
+        double side5 = Math.hypot(point1.getX() - point3.getX(), point1.getY() - point3.getY());
+        double side6 = Math.hypot(point2.getX() - point4.getX(), point2.getY() - point4.getY());
+
+        sides.add(side1);
+        sides.add(side2);
+        sides.add(side3);
+        sides.add(side4);
+        sides.add(side5);
+        sides.add(side6);
+
+        if (sides.get(0).equals(sides.get(3)) && sides.get(4).equals(sides.get(5))) {
+            result = true;
+        }
+
+        return result;
     }
 }

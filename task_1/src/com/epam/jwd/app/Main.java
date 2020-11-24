@@ -13,6 +13,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+// 1.   defaultValidator()     -- check the same points
+// 2.           
+
+
         Point[] points = createPoints(4);
         Line[] lines = createLines(2);
         Triangle[] triangles = createTriangles(2);
@@ -48,9 +52,9 @@ public class Main {
         Triangle[] triangles = new Triangle[length];
         for (int i = 0; i < length; i++) {
             triangles[i] = new Triangle(
-                    new Point(i, i + 7),
-                    new Point(i + 1, i + 12),
-                    new Point(i + 2, i + 9));
+                    new Point(i + 1, i + 9),
+                    new Point(i + 2, i + 8),
+                    new Point(i, i));
         }
 
         return triangles;
@@ -60,10 +64,10 @@ public class Main {
         Square[] squares = new Square[length];
         for (int i = 0; i < length; i++) {
             squares[i] = new Square(
-                    new Point(i + 7, i),
-                    new Point(i, i),
-                    new Point(i, i + 3),
-                    new Point(i + 7, i + 3));
+                    new Point(i, i + 1),
+                    new Point(i, i - 1 ),
+                    new Point(i + 2, i + 7),
+                    new Point(0, i));
         }
 
         return squares;
@@ -95,4 +99,6 @@ public class Main {
             LOGGER.info(square.toString());
         }
     }
+
+
 }
