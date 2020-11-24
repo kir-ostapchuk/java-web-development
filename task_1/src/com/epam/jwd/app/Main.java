@@ -80,19 +80,19 @@ public class Main {
 
     private static void logLines(Line[] lines) {
         for (Line line : lines) {
-            line.toString();
+            LOGGER.info(line.toString());
         }
     }
 
     private static void logTriangle(Triangle[] triangles) {
         for (Triangle triangle : triangles) {
-            triangle.toString();
+            LOGGER.info(triangle.toString());
         }
     }
 
     private static void logSquares(Square[] squares) {
         for (Square square : squares) {
-            square.toString();
+            LOGGER.info(square.toString());
         }
     }
 }

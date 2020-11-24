@@ -1,35 +1,35 @@
 package com.epam.jwd.model;
 
 public class Line {
-    private Point dot1;
-    private Point dot2;
+    private Point point1;
+    private Point point2;
 
-    public Line(Point dot1, Point dot2) {
-        this.dot1 = dot1;
-        this.dot2 = dot2;
+    public Line(Point point1, Point point2) {
+        this.point1 = point1;
+        this.point2 = point2;
     }
 
-    public Point getDot1() {
-        return dot1;
+    public Point getPoint1() {
+        return point1;
     }
 
-    public void setDot1(Point dot1) {
-        this.dot1 = dot1;
+    public void setPoint1(Point point1) {
+        this.point1 = point1;
     }
 
-    public Point getDot2() {
-        return dot2;
+    public Point getPoint2() {
+        return point2;
     }
 
-    public void setDot2(Point dot2) {
-        this.dot2 = dot2;
+    public void setPoint2(Point point2) {
+        this.point2 = point2;
     }
 
     @Override
     public String toString() {
         return "Line{" +
-                "dot1=" + dot1 +
-                ", dot2=" + dot2 +
+                "point1=" + point1 +
+                ", point2=" + point2 +
                 '}';
     }
 }
