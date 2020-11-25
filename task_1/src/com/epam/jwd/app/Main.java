@@ -1,8 +1,3 @@
-// TODO:
-// 1. defaultValidate()
-// 2. check defaultValidate
-
-
 package com.epam.jwd.app;
 
 import org.apache.logging.log4j.Logger;
