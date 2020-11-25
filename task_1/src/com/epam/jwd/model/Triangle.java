@@ -1,6 +1,6 @@
 package com.epam.jwd.model;
 
-public class Triangle implements Validator {
+public class Triangle implements Validator, DefaultValidator{
     private Point point1;
     private Point point2;
     private Point point3;
@@ -46,8 +46,6 @@ public class Triangle implements Validator {
 
     @Override
     public boolean validate() {
-        boolean result = false;
-
         double line1 = Math.hypot(
                 getPoint1().getX() - getPoint2().getX(),
                 getPoint1().getY() - getPoint2().getY());
@@ -60,10 +58,11 @@ public class Triangle implements Validator {
                 getPoint2().getX() - getPoint3().getX(),
                 getPoint2().getY() - getPoint3().getY());
 
-        if ((line1 + line2 > line3) || (line1 + line3 > line2) || (line2 + line3 > line1)) {
-            result = true;
-        }
+        return (line1 + line2 > line3) || (line1 + line3 > line2) || (line2 + line3 > line1);
+    }
 
-        return result;
+    @Override
+    public boolean defaultValidate() {
+        return !(point1.equals(point2) || point2.equals(point3) || point1.equals(point3));
     }
 }

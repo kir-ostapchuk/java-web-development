@@ -1,3 +1,8 @@
+// TODO:
+// 1. defaultValidate()
+// 2. check defaultValidate
+
+
 package com.epam.jwd.app;
 
 import org.apache.logging.log4j.Logger;
@@ -12,10 +17,6 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-
-// 1.   defaultValidator()     -- check the same points
-// 2.           
-
 
         Point[] points = createPoints(4);
         Line[] lines = createLines(2);
@@ -42,7 +43,7 @@ public class Main {
         for (int i = 0; i < length; i++) {
             lines[i] = new Line(
                     new Point(i, i + 7),
-                    new Point(i + 2, i + 9));
+                    new Point(i, i + 9));
         }
 
         return lines;
@@ -63,10 +64,10 @@ public class Main {
         Square[] squares = new Square[length];
         for (int i = 0; i < length; i++) {
             squares[i] = new Square(
-                    new Point(i, i + 1),
-                    new Point(i, i - 1 ),
-                    new Point(i + 2, i + 7),
-                    new Point(0, i));
+                    new Point(0, 7),
+                    new Point(0, 0 ),
+                    new Point(7, 7),
+                    new Point(7, 0));
         }
         return squares;
     }
@@ -82,29 +83,36 @@ public class Main {
 
     private static void logLines(Line[] lines) {
         for (Line line : lines) {
-            LOGGER.info(line.toString());
+            if (line.defaultValidate()) {
+                LOGGER.info(line.toString());
+            } else {
+                LOGGER.error("Object " + line.toString() + " isn't a line");
+            }
         }
     }
 
     private static void logTriangle(Triangle[] triangles) {
         for (Triangle triangle : triangles) {
-            if (!triangle.validate()) {
-                LOGGER.info(triangle.toString());
-            } else {
+            if (!triangle.defaultValidate()) {
+                LOGGER.error("Object " + triangle.toString() + " isn't a triangle");
+            } else if (!triangle.validate()) {
                 LOGGER.error("Cannot exist " + triangle.toString());
+            } else {
+                LOGGER.info(triangle.toString());
             }
         }
     }
 
     private static void logSquares(Square[] squares) {
         for (Square square : squares) {
-            if (!square.validate()) {
-                LOGGER.info(square.toString());
-            } else {
+            if (!square.defaultValidate()) {
+                LOGGER.error("Object " + square.toString() + " isn't a square");
+            } else if (!square.validate()) {
                 LOGGER.error("Cannot exist " + square.toString());
+            } else {
+                LOGGER.info(square.toString());
             }
         }
     }
-
 
 }

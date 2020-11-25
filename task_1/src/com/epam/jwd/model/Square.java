@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Square implements Validator{
+public class Square implements Validator, DefaultValidator{
     private Point point1;
     private Point point2;
     private Point point3;
@@ -61,8 +61,6 @@ public class Square implements Validator{
 
     @Override
     public boolean validate() {
-        boolean result = false;
-
         List<Double> sides = new ArrayList<>();
 
         double side1 = Math.hypot(point1.getX() - point2.getX(), point1.getY() - point2.getY());
@@ -79,10 +77,18 @@ public class Square implements Validator{
         sides.add(side5);
         sides.add(side6);
 
-        if (sides.get(0).equals(sides.get(3)) && sides.get(4).equals(sides.get(5))) {
-            result = true;
-        }
+        Collections.sort(sides);
 
-        return result;
+        return (sides.get(0).equals(sides.get(3)) && sides.get(4).equals(sides.get(5)));
+    }
+
+    @Override
+    public boolean defaultValidate() {
+        return !(point1.equals(point2) ||
+                 point2.equals(point3) ||
+                 point3.equals(point4) ||
+                 point4.equals(point1) ||
+                 point2.equals(point4) ||
+                 point1.equals(point3));
     }
 }
