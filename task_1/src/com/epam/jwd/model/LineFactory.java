@@ -14,12 +14,17 @@ public class LineFactory implements FigureFactory<Line> {
     @Override
     public Line createFigure(List<Point> points) {
         boolean isCreatable = canCreateTriangle(points);
-        if (!isCreatable) {
-            LOGGER.error("Cannot create a line with " +
+        if (isCreatable) {
+            LOGGER.info("Line: " +
                     points.get(0).toString() + ", " +
-                    points.get(1).toString());
+                    points.get(1).toString() + " was created");
+            return new Line(points.get(0), points.get(1));
+        } else {
+            LOGGER.error("Line: " +
+                    points.get(0).toString() + ", " +
+                    points.get(1).toString() + " was NOT created");
+            return null;
         }
-        return new Line(points.get(0), points.get(1));
     }
 
     private boolean canCreateTriangle(List<Point> points) {

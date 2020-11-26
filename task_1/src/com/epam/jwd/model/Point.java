@@ -53,4 +53,9 @@ public class Point {
         return Objects.hash(x, y);
     }
 
+    static int squareDis(Point p1, Point p2)
+    {
+        return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
+    }
+
 }

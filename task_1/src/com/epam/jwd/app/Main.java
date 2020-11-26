@@ -49,9 +49,9 @@ public class Main {
         TriangleFactory triangleFactory = new TriangleFactory();
 
         List<Point> points = new ArrayList<>();
+        points.add(new Point(1, 2));
         points.add(new Point(2, 2));
-        points.add(new Point(2, 2));
-        points.add(new Point(3, 2));
+        points.add(new Point(3, 1));
 
         Triangle[] triangles = new Triangle[length];
         for (int i = 0; i < length; i++) {
@@ -64,10 +64,10 @@ public class Main {
         SquareFactory squareFactory = new SquareFactory();
 
         List<Point> points = new ArrayList<>();
-        points.add(new Point(1, 2));
-        points.add(new Point(2, 2));
-        points.add(new Point(3, 2));
-        points.add(new Point(4, 2));
+        points.add(new Point(1, 10));
+        points.add(new Point(10, 0));
+        points.add(new Point(0, 0));
+        points.add(new Point(10, 10));
 
         Square[] squares = new Square[length];
         for (int i = 0; i < length; i++) {

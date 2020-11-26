@@ -14,13 +14,19 @@ public class TriangleFactory implements FigureFactory<Triangle> {
     @Override
     public Triangle createFigure(List<Point> points) {
         boolean isCreatable = canCreateTriangle(points);
-        if (!isCreatable) {
-            LOGGER.error("Cannot create a triangle with " +
+        if (isCreatable) {
+            LOGGER.info("Triangle: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
-                    points.get(2).toString());
+                    points.get(2).toString() + " was created");
+            return new Triangle(points.get(0), points.get(1), points.get(2));
+        } else {
+            LOGGER.error("Triangle: " +
+                    points.get(0).toString() + ", " +
+                    points.get(1).toString() + ", " +
+                    points.get(2).toString() + " was NOT created");
+            return null;
         }
-        return new Triangle(points.get(0), points.get(1), points.get(2));
     }
 
     private boolean canCreateTriangle(List<Point> points) {
