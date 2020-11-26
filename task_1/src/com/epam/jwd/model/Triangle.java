@@ -8,10 +8,18 @@ public class Triangle implements Validator, DefaultValidator, PerimeterStrategy,
     private Point point2;
     private Point point3;
 
+    private double side1;
+    private double side2;
+    private double side3;
+
     public Triangle(Point point1, Point point2, Point point3) {
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
+
+        side1 = calculateSide(point1, point2);
+        side2 = calculateSide(point2, point3);
+        side3 = calculateSide(point1, point3);
     }
 
     public Point getPoint1() {
@@ -47,21 +55,15 @@ public class Triangle implements Validator, DefaultValidator, PerimeterStrategy,
                 '}';
     }
 
-    @Override
-    public boolean validate() {
-        double line1 = Math.hypot(
+    private double calculateSide(Point point1, Point point2) {
+        return Math.hypot(
                 getPoint1().getX() - getPoint2().getX(),
                 getPoint1().getY() - getPoint2().getY());
+    }
 
-        double line2 = Math.hypot(
-                getPoint1().getX() - getPoint3().getX(),
-                getPoint1().getY() - getPoint3().getY());
-
-        double line3 = Math.hypot(
-                getPoint2().getX() - getPoint3().getX(),
-                getPoint2().getY() - getPoint3().getY());
-
-        return (line1 + line2 > line3) || (line1 + line3 > line2) || (line2 + line3 > line1);
+    @Override
+    public boolean validate() {
+        return (side1 + side2 > side3) || (side1 + side3 > side2) || (side2 + side3 > side1);
     }
 
     @Override
@@ -71,36 +73,12 @@ public class Triangle implements Validator, DefaultValidator, PerimeterStrategy,
 
     @Override
     public double calculatePerimeter() {
-        double line1 = Math.hypot(
-                getPoint1().getX() - getPoint2().getX(),
-                getPoint1().getY() - getPoint2().getY());
-
-        double line2 = Math.hypot(
-                getPoint1().getX() - getPoint3().getX(),
-                getPoint1().getY() - getPoint3().getY());
-
-        double line3 = Math.hypot(
-                getPoint2().getX() - getPoint3().getX(),
-                getPoint2().getY() - getPoint3().getY());
-
-        return line1 + line2 + line3;
+        return side1 + side2 + side3;
     }
 
     @Override
     public double calculateSquare() {
-        double line1 = Math.hypot(
-                getPoint1().getX() - getPoint2().getX(),
-                getPoint1().getY() - getPoint2().getY());
-
-        double line2 = Math.hypot(
-                getPoint1().getX() - getPoint3().getX(),
-                getPoint1().getY() - getPoint3().getY());
-
-        double line3 = Math.hypot(
-                getPoint2().getX() - getPoint3().getX(),
-                getPoint2().getY() - getPoint3().getY());
-
-        double p = (line1 + line2 + line3) / 2;
-        return  Math.sqrt(p * (p - line1) * (p - line2) * (p - line3));
+        double p = (side1 + side2 + side3) / 2;
+        return  Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 }
