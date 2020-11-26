@@ -106,6 +106,6 @@ public class Square implements PerimeterStrategy, SquareStrategy {
         sides.add(side6);
         Collections.sort(sides);
 
-        return  Math.pow(sides.get(0), 2);
+        return sides.get(0) * sides.get(0);
     }
 }
