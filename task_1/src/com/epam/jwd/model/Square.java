@@ -1,10 +1,12 @@
 package com.epam.jwd.model;
 
+import com.epam.jwd.strategy.PerimeterStrategy;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Square implements Validator, DefaultValidator{
+public class Square implements Validator, DefaultValidator, PerimeterStrategy {
     private Point point1;
     private Point point2;
     private Point point3;
@@ -90,5 +92,28 @@ public class Square implements Validator, DefaultValidator{
                  point4.equals(point1) ||
                  point2.equals(point4) ||
                  point1.equals(point3));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        List<Double> sides = new ArrayList<>();
+
+        double side1 = Math.hypot(point1.getX() - point2.getX(), point1.getY() - point2.getY());
+        double side2 = Math.hypot(point2.getX() - point3.getX(), point2.getY() - point3.getY());
+        double side3 = Math.hypot(point3.getX() - point4.getX(), point3.getY() - point4.getY());
+        double side4 = Math.hypot(point1.getX() - point4.getX(), point1.getY() - point4.getY());
+        double side5 = Math.hypot(point1.getX() - point3.getX(), point1.getY() - point3.getY());
+        double side6 = Math.hypot(point2.getX() - point4.getX(), point2.getY() - point4.getY());
+
+        sides.add(side1);
+        sides.add(side2);
+        sides.add(side3);
+        sides.add(side4);
+        sides.add(side5);
+        sides.add(side6);
+
+        Collections.sort(sides);
+
+        return side1 * 4;
     }
 }

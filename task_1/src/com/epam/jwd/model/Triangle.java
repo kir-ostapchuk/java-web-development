@@ -1,6 +1,9 @@
 package com.epam.jwd.model;
 
-public class Triangle implements Validator, DefaultValidator{
+import com.epam.jwd.strategy.PerimeterStrategy;
+import com.epam.jwd.strategy.SquareStrategy;
+
+public class Triangle implements Validator, DefaultValidator, PerimeterStrategy, SquareStrategy {
     private Point point1;
     private Point point2;
     private Point point3;
@@ -64,5 +67,40 @@ public class Triangle implements Validator, DefaultValidator{
     @Override
     public boolean defaultValidate() {
         return !(point1.equals(point2) || point2.equals(point3) || point1.equals(point3));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        double line1 = Math.hypot(
+                getPoint1().getX() - getPoint2().getX(),
+                getPoint1().getY() - getPoint2().getY());
+
+        double line2 = Math.hypot(
+                getPoint1().getX() - getPoint3().getX(),
+                getPoint1().getY() - getPoint3().getY());
+
+        double line3 = Math.hypot(
+                getPoint2().getX() - getPoint3().getX(),
+                getPoint2().getY() - getPoint3().getY());
+
+        return line1 + line2 + line3;
+    }
+
+    @Override
+    public double calculateSquare() {
+        double line1 = Math.hypot(
+                getPoint1().getX() - getPoint2().getX(),
+                getPoint1().getY() - getPoint2().getY());
+
+        double line2 = Math.hypot(
+                getPoint1().getX() - getPoint3().getX(),
+                getPoint1().getY() - getPoint3().getY());
+
+        double line3 = Math.hypot(
+                getPoint2().getX() - getPoint3().getX(),
+                getPoint2().getY() - getPoint3().getY());
+
+        double p = (line1 + line2 + line3) / 2;
+        return  Math.sqrt(p * (p - line1) * (p - line2) * (p - line3));
     }
 }
