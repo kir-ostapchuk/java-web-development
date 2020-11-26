@@ -20,7 +20,7 @@ public class Square implements PerimeterStrategy, SquareStrategy {
     private double side5;
     private double side6;
 
-    public Square(Point point1, Point point2, Point point3, Point point4) {
+    Square(Point point1, Point point2, Point point3, Point point4) {
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;

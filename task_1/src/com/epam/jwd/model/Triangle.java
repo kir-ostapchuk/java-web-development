@@ -12,7 +12,7 @@ public class Triangle implements PerimeterStrategy, SquareStrategy {
     private double side2;
     private double side3;
 
-    public Triangle(Point point1, Point point2, Point point3) {
+    Triangle(Point point1, Point point2, Point point3) {
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
