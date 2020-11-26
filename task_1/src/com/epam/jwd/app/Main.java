@@ -1,6 +1,5 @@
 package com.epam.jwd.app;
 
-import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.LineFactory;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.PointFactory;

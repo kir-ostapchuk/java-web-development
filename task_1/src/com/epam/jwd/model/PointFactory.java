@@ -1,8 +1,7 @@
 package com.epam.jwd.model;
 
-public class PointFactory implements FigureFactory {
+public class PointFactory {
     public Point createPoint(int x, int y) {
-        Point point = new Point(x, y);
-        return point;
+        return new Point(x, y);
     }
 }
