@@ -23,7 +23,7 @@ public class TriangleFactory implements FigureFactory<Triangle> {
         return new Triangle(points.get(0), points.get(1), points.get(2));
     }
 
-    boolean canCreateTriangle(List<Point> points) {
+    private boolean canCreateTriangle(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);
 
         if (compressPoints.size() == points.size()) {

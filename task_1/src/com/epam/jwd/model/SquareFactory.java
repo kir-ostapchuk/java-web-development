@@ -20,7 +20,7 @@ public class SquareFactory implements FigureFactory<Square> {
         return new Square(points.get(0), points.get(1), points.get(2), points.get(3));
     }
 
-    boolean canCreateSquare(List<Point> points) {
+    private boolean canCreateSquare(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);
 
         boolean result1 = compressPoints.size() == points.size();

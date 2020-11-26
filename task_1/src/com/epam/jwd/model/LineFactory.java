@@ -22,7 +22,7 @@ public class LineFactory implements FigureFactory<Line> {
         return new Line(points.get(0), points.get(1));
     }
 
-    boolean canCreateTriangle(List<Point> points) {
+    private boolean canCreateTriangle(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);
 
         return compressPoints.size() == points.size();
