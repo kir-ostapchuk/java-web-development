@@ -26,7 +26,6 @@ public class Main {
 
         logPoints(points);
         logLines(lines);
-        logTriangle(triangles);
         logSquares(squares);
     }
 
@@ -99,18 +98,6 @@ public class Main {
                 LOGGER.info(line.toString());
             } else {
                 LOGGER.error("Object " + line.toString() + " isn't a line");
-            }
-        }
-    }
-
-    private static void logTriangle(Triangle[] triangles) {
-        for (Triangle triangle : triangles) {
-            if (!triangle.defaultValidate()) {
-                LOGGER.error("Object " + triangle.toString() + " isn't a triangle");
-            } else if (!triangle.validate()) {
-                LOGGER.error("Cannot exist " + triangle.toString());
-            } else {
-                LOGGER.info(triangle.toString());
             }
         }
     }

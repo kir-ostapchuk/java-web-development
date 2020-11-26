@@ -15,7 +15,10 @@ public class TriangleFactory implements FigureFactory<Triangle> {
     public Triangle createFigure(List<Point> points) {
         boolean isCreatable = canCreateTriangle(points);
         if (!isCreatable) {
-            LOGGER.error("Cannot create a triangle");
+            LOGGER.error("Cannot create a triangle with " +
+                    points.get(0).toString() + ", " +
+                    points.get(1).toString() + ", " +
+                    points.get(2).toString() );
         }
         return new Triangle(points.get(0), points.get(1), points.get(2));
     }
@@ -23,8 +26,13 @@ public class TriangleFactory implements FigureFactory<Triangle> {
     boolean canCreateTriangle(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);
 
-        boolean result1 = compressPoints.size() == points.size();
-
-        return result1;
+        if (compressPoints.size() == points.size()) {
+            int answer = points.get(0).getX() * (points.get(1).getY() - points.get(2).getY()) +
+                    points.get(1).getX() * (points.get(1).getY() - points.get(2).getY()) +
+                    points.get(1).getX() * (points.get(1).getY() - points.get(2).getY());
+            return answer != 0;
+        } else {
+            return false;
+        }
     }
 }
