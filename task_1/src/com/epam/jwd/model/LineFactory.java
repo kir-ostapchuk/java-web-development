@@ -1,10 +1,28 @@
 package com.epam.jwd.model;
 
-public class LineFactory {
-    public Line createLine(int x1, int y1, int x2, int y2) {
-        PointFactory pointFactory = new PointFactory();
-        Point point1 = pointFactory.createPoint(x1, y1);
-        Point point2 = pointFactory.createPoint(x2, y2);
-        return new Line(point1, point2);
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class LineFactory implements FigureFactory<Line> {
+
+    private static final Logger LOGGER = LogManager.getLogger(TriangleFactory.class);
+
+    @Override
+    public Line createFigure(List<Point> points) {
+        boolean isCreatable = canCreateTriangle(points);
+        if (!isCreatable) {
+            LOGGER.error("Cannot create a line");
+        }
+        return new Line(points.get(0), points.get(1));
+    }
+
+    boolean canCreateTriangle(List<Point> points) {
+        Set<Point> compressPoints = new HashSet(points);
+
+        return compressPoints.size() == points.size();
     }
 }

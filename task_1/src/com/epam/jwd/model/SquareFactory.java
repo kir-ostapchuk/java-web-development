@@ -1,15 +1,30 @@
 package com.epam.jwd.model;
 
-public class SquareFactory {
-    public Square createSquare(int x1, int y1,
-                               int x2, int y2,
-                               int x3, int y3,
-                               int x4, int y4) {
-        PointFactory pointFactory = new PointFactory();
-        Point point1 = pointFactory.createPoint(x1, y1);
-        Point point2 = pointFactory.createPoint(x2, y2);
-        Point point3 = pointFactory.createPoint(x3, y3);
-        Point point4 = pointFactory.createPoint(x4, y4);
-        return new Square(point1, point2, point3, point4);
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class SquareFactory implements FigureFactory<Square> {
+
+    private static final Logger LOGGER = LogManager.getLogger(SquareFactory.class);
+
+    @Override
+    public Square createFigure(List<Point> points) {
+        boolean isCreatable = canCreateSquare(points);
+        if (!isCreatable) {
+            LOGGER.error("Cannot create a square");
+        }
+        return new Square(points.get(0), points.get(1), points.get(2), points.get(3));
+    }
+
+    boolean canCreateSquare(List<Point> points) {
+        Set<Point> compressPoints = new HashSet(points);
+
+        boolean result1 = compressPoints.size() == points.size();
+
+        return result1;
     }
 }

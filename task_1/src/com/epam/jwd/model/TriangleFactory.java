@@ -1,13 +1,30 @@
 package com.epam.jwd.model;
 
-public class TriangleFactory {
-    public Triangle createTriangle(int x1, int y1,
-                           int x2, int y2,
-                           int x3, int y3) {
-        PointFactory pointFactory = new PointFactory();
-        Point point1 = pointFactory.createPoint(x1, y1);
-        Point point2 = pointFactory.createPoint(x2, y2);
-        Point point3 = pointFactory.createPoint(x3, y3);
-        return new Triangle(point1, point2, point3);
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class TriangleFactory implements FigureFactory<Triangle> {
+
+    private static final Logger LOGGER = LogManager.getLogger(TriangleFactory.class);
+
+    @Override
+    public Triangle createFigure(List<Point> points) {
+        boolean isCreatable = canCreateTriangle(points);
+        if (!isCreatable) {
+            LOGGER.error("Cannot create a triangle");
+        }
+        return new Triangle(points.get(0), points.get(1), points.get(2));
+    }
+
+    boolean canCreateTriangle(List<Point> points) {
+        Set<Point> compressPoints = new HashSet(points);
+
+        boolean result1 = compressPoints.size() == points.size();
+
+        return result1;
     }
 }

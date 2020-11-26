@@ -85,16 +85,13 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
     @Override
     public boolean validate() {
         List<Double> sides = new ArrayList<>();
-
         sides.add(side1);
         sides.add(side2);
         sides.add(side3);
         sides.add(side4);
         sides.add(side5);
         sides.add(side6);
-
         Collections.sort(sides);
-
         return (sides.get(0).equals(sides.get(3)) && sides.get(4).equals(sides.get(5)));
     }
 
@@ -111,30 +108,25 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
     @Override
     public double calculatePerimeter() {
         List<Double> sides = new ArrayList<>();
-
         sides.add(side1);
         sides.add(side2);
         sides.add(side3);
         sides.add(side4);
         sides.add(side5);
         sides.add(side6);
-
         Collections.sort(sides);
-
         return sides.get(0) * 4;
     }
 
     @Override
     public double calculateSquare() {
         List<Double> sides = new ArrayList<>();
-
         sides.add(side1);
         sides.add(side2);
         sides.add(side3);
         sides.add(side4);
         sides.add(side5);
         sides.add(side6);
-
         Collections.sort(sides);
 
         return  Math.pow(sides.get(0), 2);
