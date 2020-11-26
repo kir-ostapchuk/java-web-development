@@ -13,11 +13,25 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
     private Point point3;
     private Point point4;
 
+    private double side1;
+    private double side2;
+    private double side3;
+    private double side4;
+    private double side5;
+    private double side6;
+
     public Square(Point point1, Point point2, Point point3, Point point4) {
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
         this.point4 = point4;
+
+        side1 = calculateSide(point1, point2);
+        side2 = calculateSide(point2, point3);
+        side3 = calculateSide(point3, point4);
+        side4 = calculateSide(point1, point4);
+        side5 = calculateSide(point2, point4);
+        side6 = calculateSide(point1, point3);
     }
 
     public Point getPoint1() {
@@ -52,6 +66,12 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
         this.point4 = point4;
     }
 
+    private double calculateSide(Point point1, Point point2) {
+        return Math.hypot(
+                point1.getX() - point2.getX(),
+                point1.getY() - point2.getY());
+    }
+
     @Override
     public String toString() {
         return "Square{" +
@@ -65,13 +85,6 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
     @Override
     public boolean validate() {
         List<Double> sides = new ArrayList<>();
-
-        double side1 = Math.hypot(point1.getX() - point2.getX(), point1.getY() - point2.getY());
-        double side2 = Math.hypot(point2.getX() - point3.getX(), point2.getY() - point3.getY());
-        double side3 = Math.hypot(point3.getX() - point4.getX(), point3.getY() - point4.getY());
-        double side4 = Math.hypot(point1.getX() - point4.getX(), point1.getY() - point4.getY());
-        double side5 = Math.hypot(point1.getX() - point3.getX(), point1.getY() - point3.getY());
-        double side6 = Math.hypot(point2.getX() - point4.getX(), point2.getY() - point4.getY());
 
         sides.add(side1);
         sides.add(side2);
@@ -99,13 +112,6 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
     public double calculatePerimeter() {
         List<Double> sides = new ArrayList<>();
 
-        double side1 = Math.hypot(point1.getX() - point2.getX(), point1.getY() - point2.getY());
-        double side2 = Math.hypot(point2.getX() - point3.getX(), point2.getY() - point3.getY());
-        double side3 = Math.hypot(point3.getX() - point4.getX(), point3.getY() - point4.getY());
-        double side4 = Math.hypot(point1.getX() - point4.getX(), point1.getY() - point4.getY());
-        double side5 = Math.hypot(point1.getX() - point3.getX(), point1.getY() - point3.getY());
-        double side6 = Math.hypot(point2.getX() - point4.getX(), point2.getY() - point4.getY());
-
         sides.add(side1);
         sides.add(side2);
         sides.add(side3);
@@ -115,20 +121,13 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
 
         Collections.sort(sides);
 
-        return side1 * 4;
+        return sides.get(0) * 4;
     }
 
     @Override
     public double calculateSquare() {
         List<Double> sides = new ArrayList<>();
 
-        double side1 = Math.hypot(point1.getX() - point2.getX(), point1.getY() - point2.getY());
-        double side2 = Math.hypot(point2.getX() - point3.getX(), point2.getY() - point3.getY());
-        double side3 = Math.hypot(point3.getX() - point4.getX(), point3.getY() - point4.getY());
-        double side4 = Math.hypot(point1.getX() - point4.getX(), point1.getY() - point4.getY());
-        double side5 = Math.hypot(point1.getX() - point3.getX(), point1.getY() - point3.getY());
-        double side6 = Math.hypot(point2.getX() - point4.getX(), point2.getY() - point4.getY());
-
         sides.add(side1);
         sides.add(side2);
         sides.add(side3);
@@ -138,6 +137,6 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
 
         Collections.sort(sides);
 
-        return  Math.pow(side1, 2);
+        return  Math.pow(sides.get(0), 2);
     }
 }
