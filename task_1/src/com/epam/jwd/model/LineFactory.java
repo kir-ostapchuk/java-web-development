@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class LineFactory implements FigureFactory<Line> {
 
-    private static final Logger LOGGER = LogManager.getLogger(TriangleFactory.class);
+    private static final Logger LOGGER = LogManager.getLogger(LineFactory.class);
 
     @Override
     public Line createFigure(List<Point> points) {

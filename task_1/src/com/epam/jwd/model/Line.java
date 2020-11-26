@@ -1,6 +1,6 @@
 package com.epam.jwd.model;
 
-public class Line implements DefaultValidator {
+public class Line {
     private Point point1;
     private Point point2;
 
@@ -31,10 +31,5 @@ public class Line implements DefaultValidator {
                 "point1=" + point1 +
                 ", point2=" + point2 +
                 '}';
-    }
-
-    @Override
-    public boolean defaultValidate() {
-        return !point1.equals(point2);
     }
 }

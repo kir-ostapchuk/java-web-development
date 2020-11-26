@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Square implements Validator, DefaultValidator, PerimeterStrategy, SquareStrategy {
+public class Square implements PerimeterStrategy, SquareStrategy {
     private Point point1;
     private Point point2;
     private Point point3;
@@ -80,29 +80,6 @@ public class Square implements Validator, DefaultValidator, PerimeterStrategy, S
                 ", point3=" + point3 +
                 ", point4=" + point4 +
                 '}';
-    }
-
-    @Override
-    public boolean validate() {
-        List<Double> sides = new ArrayList<>();
-        sides.add(side1);
-        sides.add(side2);
-        sides.add(side3);
-        sides.add(side4);
-        sides.add(side5);
-        sides.add(side6);
-        Collections.sort(sides);
-        return (sides.get(0).equals(sides.get(3)) && sides.get(4).equals(sides.get(5)));
-    }
-
-    @Override
-    public boolean defaultValidate() {
-        return !(point1.equals(point2) ||
-                 point2.equals(point3) ||
-                 point3.equals(point4) ||
-                 point4.equals(point1) ||
-                 point2.equals(point4) ||
-                 point1.equals(point3));
     }
 
     @Override

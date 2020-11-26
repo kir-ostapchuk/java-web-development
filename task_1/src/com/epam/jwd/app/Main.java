@@ -24,9 +24,9 @@ public class Main {
         Triangle[] triangles = createTriangles(2);
         Square[] squares = createSquares(1);
 
-        logPoints(points);
-        logLines(lines);
-        logSquares(squares);
+//        logPoints(points);
+//        logLines(lines);
+//        logSquares(squares);
     }
 
     private static Point[] createPoints(int length) {
@@ -83,35 +83,35 @@ public class Main {
         return squares;
     }
 
-    private static void logPoints(Point[] points) {
-        int i = 0;
-        do {
-            LOGGER.info(points[i].toString());
-            i++;
-        }
-        while (i < points.length);
-    }
-
-    private static void logLines(Line[] lines) {
-        for (Line line : lines) {
-            if (line.defaultValidate()) {
-                LOGGER.info(line.toString());
-            } else {
-                LOGGER.error("Object " + line.toString() + " isn't a line");
-            }
-        }
-    }
-
-    private static void logSquares(Square[] squares) {
-        for (Square square : squares) {
-            if (!square.defaultValidate()) {
-                LOGGER.error("Object " + square.toString() + " isn't a square");
-            } else if (!square.validate()) {
-                LOGGER.error("Cannot exist " + square.toString());
-            } else {
-                LOGGER.info(square.toString());
-            }
-        }
-    }
+//    private static void logPoints(Point[] points) {
+//        int i = 0;
+//        do {
+//            LOGGER.info(points[i].toString());
+//            i++;
+//        }
+//        while (i < points.length);
+//    }
+//
+//    private static void logLines(Line[] lines) {
+//        for (Line line : lines) {
+//            if (line.defaultValidate()) {
+//                LOGGER.info(line.toString());
+//            } else {
+//                LOGGER.error("Object " + line.toString() + " isn't a line");
+//            }
+//        }
+//    }
+//
+//    private static void logSquares(Square[] squares) {
+//        for (Square square : squares) {
+//            if (!square.defaultValidate()) {
+//                LOGGER.error("Object " + square.toString() + " isn't a square");
+//            } else if (!square.validate()) {
+//                LOGGER.error("Cannot exist " + square.toString());
+//            } else {
+//                LOGGER.info(square.toString());
+//            }
+//        }
+//    }
 
 }

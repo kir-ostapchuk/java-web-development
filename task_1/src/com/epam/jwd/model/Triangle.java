@@ -3,7 +3,7 @@ package com.epam.jwd.model;
 import com.epam.jwd.strategy.PerimeterStrategy;
 import com.epam.jwd.strategy.SquareStrategy;
 
-public class Triangle implements Validator, DefaultValidator, PerimeterStrategy, SquareStrategy {
+public class Triangle implements PerimeterStrategy, SquareStrategy {
     private Point point1;
     private Point point2;
     private Point point3;
@@ -59,16 +59,6 @@ public class Triangle implements Validator, DefaultValidator, PerimeterStrategy,
         return Math.hypot(
                 point1.getX() - point2.getX(),
                 point1.getY() - point2.getY());
-    }
-
-    @Override
-    public boolean validate() {
-        return (side1 + side2 > side3) || (side1 + side3 > side2) || (side2 + side3 > side1);
-    }
-
-    @Override
-    public boolean defaultValidate() {
-        return !(point1.equals(point2) || point2.equals(point3) || point1.equals(point3));
     }
 
     @Override
