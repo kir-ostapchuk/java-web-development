@@ -57,8 +57,8 @@ public class Triangle implements Validator, DefaultValidator, PerimeterStrategy,
 
     private double calculateSide(Point point1, Point point2) {
         return Math.hypot(
-                getPoint1().getX() - getPoint2().getX(),
-                getPoint1().getY() - getPoint2().getY());
+                point1.getX() - point2.getX(),
+                point1.getY() - point2.getY());
     }
 
     @Override
