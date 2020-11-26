@@ -15,7 +15,9 @@ public class LineFactory implements FigureFactory<Line> {
     public Line createFigure(List<Point> points) {
         boolean isCreatable = canCreateTriangle(points);
         if (!isCreatable) {
-            LOGGER.error("Cannot create a line");
+            LOGGER.error("Cannot create a line with " +
+                    points.get(0).toString() + ", " +
+                    points.get(1).toString());
         }
         return new Line(points.get(0), points.get(1));
     }

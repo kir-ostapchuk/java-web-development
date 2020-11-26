@@ -18,7 +18,7 @@ public class TriangleFactory implements FigureFactory<Triangle> {
             LOGGER.error("Cannot create a triangle with " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
-                    points.get(2).toString() );
+                    points.get(2).toString());
         }
         return new Triangle(points.get(0), points.get(1), points.get(2));
     }
