@@ -2,7 +2,7 @@ package com.epam.jwd.model;
 
 import java.util.Objects;
 
-public class Point {
+public class Point implements Figure {
     private int x;
     private int y;
 

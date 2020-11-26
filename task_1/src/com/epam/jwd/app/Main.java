@@ -1,8 +1,13 @@
 package com.epam.jwd.app;
 
+import com.epam.jwd.model.FigureFactory;
+import com.epam.jwd.model.LineFactory;
+import com.epam.jwd.model.Point;
+import com.epam.jwd.model.PointFactory;
+import com.epam.jwd.model.SquareFactory;
+import com.epam.jwd.model.TriangleFactory;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import com.epam.jwd.model.Point;
 import com.epam.jwd.model.Line;
 import com.epam.jwd.model.Triangle;
 import com.epam.jwd.model.Square;
@@ -25,44 +30,46 @@ public class Main {
     }
 
     private static Point[] createPoints(int length) {
+        PointFactory pointFactory = new PointFactory();
+
         Point[] points = new Point[length];
         for (int i = 0; i < length; i++) {
-            points[i] = new Point(i, i + 7);
+            points[i] = pointFactory.createPoint(i, i + 9);
         }
 
         return points;
     }
 
     private static Line[] createLines(int length) {
+        LineFactory lineFactory = new LineFactory();
+
         Line[] lines = new Line[length];
         for (int i = 0; i < length; i++) {
-            lines[i] = new Line(
-                    new Point(i, i + 7),
-                    new Point(i, i + 9));
+            lines[i] = lineFactory.createLine(i, i + 2, i + 3, i - 7);
         }
-
         return lines;
     }
 
     private static Triangle[] createTriangles(int length) {
+        TriangleFactory triangleFactory = new TriangleFactory();
+
         Triangle[] triangles = new Triangle[length];
         for (int i = 0; i < length; i++) {
-            triangles[i] = new Triangle(
-                    new Point(i + 1, i + 9),
-                    new Point(i + 2, i + 8),
-                    new Point(i, i));
+            triangles[i] = triangleFactory.createTriangle(
+                    i, i + 1, i + 2, i - 3, i + 9, i + 5
+            );
         }
         return triangles;
     }
 
     private static Square[] createSquares(int length) {
+        SquareFactory squareFactory = new SquareFactory();
+
         Square[] squares = new Square[length];
         for (int i = 0; i < length; i++) {
-            squares[i] = new Square(
-                    new Point(0, 7),
-                    new Point(0, 0 ),
-                    new Point(7, 7),
-                    new Point(7, 0));
+            squares[i] = squareFactory.createSquare(
+                    i, i + 1, i + 2, i - 3, i + 9, i + 5, i + 9, i - 2
+            );
         }
         return squares;
     }
