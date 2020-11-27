@@ -1,9 +1,5 @@
 package com.epam.jwd.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Square {
     private Point point1;
     private Point point2;

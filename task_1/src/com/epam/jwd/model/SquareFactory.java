@@ -16,20 +16,19 @@ public class SquareFactory implements FigureFactory<Square> {
     @Override
     public Square createFigure(List<Point> points) {
         boolean isCreatable = canCreateSquare(points);
-        if (isCreatable) {
-            LOGGER.info("Square: " +
-                    points.get(0).toString() + ", " +
-                    points.get(1).toString() + ", " +
-                    points.get(2).toString() + " was created");
-
-            return new Square(points.get(0), points.get(1), points.get(2), points.get(3));
-        } else {
-            LOGGER.error("Square: " +
+        if (!isCreatable) {
+            throw new IllegalArgumentException("Square: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
                     points.get(2).toString() + " was NOT created");
-            return null;
+
         }
+        LOGGER.info("Square: " +
+                points.get(0).toString() + ", " +
+                points.get(1).toString() + ", " +
+                points.get(2).toString() + " was created");
+
+        return new Square(points.get(0), points.get(1), points.get(2), points.get(3));
     }
 
     private boolean canCreateSquare(List<Point> points) {

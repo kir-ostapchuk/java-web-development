@@ -7,19 +7,26 @@ import com.epam.jwd.model.TriangleFactory;
 import com.epam.jwd.model.Line;
 import com.epam.jwd.model.Triangle;
 import com.epam.jwd.model.Square;
-import com.epam.jwd.strategy.SquareStrategySingleton;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) {
 
-        Point[] points = createPoints(4);
-        Line[] lines = createLines(2);
-        Triangle[] triangles = createTriangles(2);
-        Square[] squares = createSquares(1);
+        try {
+            Point[] points = createPoints(4);
+            Line[] lines = createLines(2);
+            Triangle[] triangles = createTriangles(2);
+            Square[] squares = createSquares(1);
+        } catch (IllegalArgumentException exception) {
+            LOGGER.error(exception.getMessage());
+        }
 
     }
 
