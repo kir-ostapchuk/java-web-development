@@ -1,18 +1,18 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.MultiAngleFigure;
+import com.epam.jwd.model.Pentagon;
 import com.epam.jwd.model.Point;
 
-public enum MultiAngleFigureStrategy implements GeometricCalcStrategy<MultiAngleFigure> {
+public enum PentagonStrategy implements GeometricCalcStrategy<Pentagon> {
     INSTANCE;
 
     @Override
-    public double calculatePerimeter(MultiAngleFigure figure) {
+    public double calculatePerimeter(Pentagon figure) {
         return 0;
     }
 
     @Override
-    public double calculateSquare(MultiAngleFigure figure) {
+    public double calculateSquare(Pentagon figure) {
         return 0;
     }
 

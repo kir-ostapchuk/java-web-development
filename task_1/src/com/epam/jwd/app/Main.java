@@ -1,3 +1,7 @@
+// TODO:
+// 1. create Figure to keep points amount (ex. for triangle = 3, for line= 2)
+// 2. hexagon
+
 package com.epam.jwd.app;
 
 import com.epam.jwd.model.LineFactory;
