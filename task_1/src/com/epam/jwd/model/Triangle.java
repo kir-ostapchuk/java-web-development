@@ -1,25 +1,15 @@
 package com.epam.jwd.model;
 
-import com.epam.jwd.strategy.PerimeterStrategy;
-import com.epam.jwd.strategy.SquareStrategy;
-
-public class Triangle implements PerimeterStrategy, SquareStrategy {
+public class Triangle {
     private Point point1;
     private Point point2;
     private Point point3;
-
-    private double side1;
-    private double side2;
-    private double side3;
 
     Triangle(Point point1, Point point2, Point point3) {
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
 
-        side1 = calculateSide(point1, point2);
-        side2 = calculateSide(point2, point3);
-        side3 = calculateSide(point1, point3);
     }
 
     public Point getPoint1() {
@@ -53,22 +43,5 @@ public class Triangle implements PerimeterStrategy, SquareStrategy {
                 ", point2=" + point2 +
                 ", point3=" + point3 +
                 '}';
-    }
-
-    private double calculateSide(Point point1, Point point2) {
-        return Math.hypot(
-                point1.getX() - point2.getX(),
-                point1.getY() - point2.getY());
-    }
-
-    @Override
-    public double calculatePerimeter() {
-        return side1 + side2 + side3;
-    }
-
-    @Override
-    public double calculateSquare() {
-        double p = (side1 + side2 + side3) / 2;
-        return  Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 }
