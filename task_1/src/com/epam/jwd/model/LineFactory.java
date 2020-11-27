@@ -13,7 +13,7 @@ public class LineFactory implements FigureFactory<Line> {
 
     @Override
     public Line createFigure(List<Point> points) {
-        boolean isCreatable = canCreateTriangle(points);
+        boolean isCreatable = canCreateLine(points);
         if (!isCreatable) {
             throw new IllegalArgumentException("Line: " +
                     points.get(0).toString() + ", " +
@@ -25,7 +25,7 @@ public class LineFactory implements FigureFactory<Line> {
         return new Line(points.get(0), points.get(1));
     }
 
-    private boolean canCreateTriangle(List<Point> points) {
+    private boolean canCreateLine(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);
 
         return compressPoints.size() == points.size();
