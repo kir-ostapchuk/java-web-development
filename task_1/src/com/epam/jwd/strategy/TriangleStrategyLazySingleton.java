@@ -3,8 +3,10 @@ package com.epam.jwd.strategy;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.Triangle;
 
-public enum TriangleStrategy implements GeometricCalcStrategy<Triangle> {
-    INSTANCE;
+public class TriangleStrategyLazySingleton implements GeometricCalcStrategy<Triangle>{
+
+    private TriangleStrategyLazySingleton() {
+    }
 
     @Override
     public double calculatePerimeter(Triangle triangle) {
@@ -29,5 +31,13 @@ public enum TriangleStrategy implements GeometricCalcStrategy<Triangle> {
         return Math.hypot(
                 point1.getX() - point2.getX(),
                 point1.getY() - point2.getY());
+    }
+
+    private static class LazySingletonHolder {
+        private final static TriangleStrategyLazySingleton instance = new TriangleStrategyLazySingleton();
+    }
+
+    public static TriangleStrategyLazySingleton getInstance() {
+        return LazySingletonHolder.instance;
     }
 }
