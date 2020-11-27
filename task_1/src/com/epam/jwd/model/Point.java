@@ -15,7 +15,7 @@ public class Point {
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
-        LOGGER.info("Point(" + x + ", " + y + ")" + " was created");
+        LOGGER.info("Point: x=" + x + ", y=" + y + " was created");
     }
 
     public int getX() {
@@ -37,20 +37,6 @@ public class Point {
     @Override
     public String toString() {
         return "Point(" + x + ", " + y + ")";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Point point = (Point) o;
-        return x == point.x &&
-                y == point.y;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
     }
 
     static int squareDis(Point p1, Point p2)

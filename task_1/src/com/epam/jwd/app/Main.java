@@ -7,7 +7,6 @@ import com.epam.jwd.model.TriangleFactory;
 import com.epam.jwd.model.Line;
 import com.epam.jwd.model.Triangle;
 import com.epam.jwd.model.Square;
-import com.epam.jwd.strategy.TriangleStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
