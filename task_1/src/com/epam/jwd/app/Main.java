@@ -1,6 +1,8 @@
 package com.epam.jwd.app;
 
 import com.epam.jwd.model.LineFactory;
+import com.epam.jwd.model.Pentagon;
+import com.epam.jwd.model.PentagonFactory;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.SquareFactory;
 import com.epam.jwd.model.TriangleFactory;
@@ -32,7 +34,11 @@ public class Main {
         final List<Integer> xSquareCoordinates = Arrays.asList(-4, -3, -2, -1);
         final List<Integer> ySquareCoordinates = Arrays.asList(-4, -3, -2, -1);
 
+        final List<Integer> xPentagonCoordinates = Arrays.asList(1, 2, 3, 4, 5, 5, 6);
+        final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6, 7, 8);
+
         try {
+            List<Pentagon> pentagons = createPentagons(xPentagonCoordinates, yPentagonCoordinates);
             List<Point> points = createPoints(xPointCoordinates, yPointCoordinates);
             List<Line> lines = createLines(xLineCoordinates, yLineCoordinates);
             List<Triangle> triangles = createTriangles(xTriangleCoordinates, yTriangleCoordinates);
@@ -40,6 +46,9 @@ public class Main {
         } catch (IllegalArgumentException exception) {
             LOGGER.error(exception.getMessage());
         }
+
+
+
     }
 
     private static List<Point> createPoints(List<Integer> xCoordinates, List<Integer> yCoordinates) {
@@ -57,7 +66,7 @@ public class Main {
         List<Point> points = createPoints(xCoordinates, yCoordinates);
         List<Line> lines = new ArrayList<>();
 
-        for (int i = 0; i < xCoordinates.size(); i++) {
+        for (int i = 0; i < xCoordinates.size() / 2; i++) {
             lines.add(lineFactory.createFigure(points));
         }
         return lines;
@@ -69,9 +78,7 @@ public class Main {
         List<Point> points = createPoints(xCoordinates, yCoordinates);
         List<Triangle> triangles = new ArrayList<>();
 
-        for (int i = 0; i < xCoordinates.size(); i++) {
-            triangles.add(triangleFactory.createFigure(points));
-        }
+        triangles.add(triangleFactory.createFigure(points));
         return triangles;
     }
 
@@ -81,10 +88,19 @@ public class Main {
         List<Point> points = createPoints(xCoordinates, yCoordinates);
         List<Square> squares = new ArrayList<>();
 
-        for (int i = 0; i < xCoordinates.size(); i++) {
-            squares.add(squareFactory.createFigure(points));
-        }
+        squares.add(squareFactory.createFigure(points));
         return squares;
+    }
+
+    private static List<Pentagon> createPentagons(List<Integer> xCoordinates, List<Integer> yCoordinates) {
+        PentagonFactory pentagonFactory = new PentagonFactory();
+
+        List<Point> points = createPoints(xCoordinates, yCoordinates);
+        List<Pentagon> pentagons = new ArrayList<>();
+
+        pentagons.add(pentagonFactory.createFigure(points));
+
+        return pentagons;
     }
 
 }
