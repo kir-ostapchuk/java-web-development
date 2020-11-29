@@ -28,7 +28,7 @@ public class SquareFactory implements FigureFactory<Square> {
                 points.get(1).toString() + ", " +
                 points.get(2).toString() + " was created");
 
-        return new Square(points.get(0), points.get(1), points.get(2), points.get(3));
+        return new Square(points);
     }
 
     private boolean canCreateSquare(List<Point> points) {
