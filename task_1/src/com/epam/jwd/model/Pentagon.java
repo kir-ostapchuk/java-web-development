@@ -9,11 +9,7 @@ public class Pentagon {
         this.points = points;
     }
 
-    public List<Point> getPoints() {
-        return points;
-    }
-
-    public int getSides() {
-        return points.size();
+    public Point getPoint(int ind) {
+        return points.get(ind);
     }
 }
