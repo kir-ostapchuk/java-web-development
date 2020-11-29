@@ -1,6 +1,6 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.Pentagon;
+import com.epam.jwd.model.pentagon.Pentagon;
 import com.epam.jwd.model.Point;
 
 public enum PentagonStrategy implements GeometricCalcStrategy<Pentagon> {

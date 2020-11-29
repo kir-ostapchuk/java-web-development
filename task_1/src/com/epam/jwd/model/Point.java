@@ -29,7 +29,7 @@ public class Point {
         return "Point(" + x + ", " + y + ")";
     }
 
-    static int squareDis(Point p1, Point p2)
+    public static int squareDis(Point p1, Point p2)
     {
         return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
     }

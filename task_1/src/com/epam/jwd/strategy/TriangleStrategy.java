@@ -1,7 +1,7 @@
 package com.epam.jwd.strategy;
 
 import com.epam.jwd.model.Point;
-import com.epam.jwd.model.Triangle;
+import com.epam.jwd.model.triangle.Triangle;
 
 public enum TriangleStrategy implements GeometricCalcStrategy<Triangle> {
     INSTANCE;

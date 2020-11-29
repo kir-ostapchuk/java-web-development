@@ -1,4 +1,7 @@
-package com.epam.jwd.model;
+package com.epam.jwd.model.pentagon;
+
+import com.epam.jwd.model.Figure;
+import com.epam.jwd.model.Point;
 
 import java.util.List;
 

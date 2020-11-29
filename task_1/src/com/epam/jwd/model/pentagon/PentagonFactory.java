@@ -1,5 +1,7 @@
-package com.epam.jwd.model;
+package com.epam.jwd.model.pentagon;
 
+import com.epam.jwd.model.FigureFactory;
+import com.epam.jwd.model.Point;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

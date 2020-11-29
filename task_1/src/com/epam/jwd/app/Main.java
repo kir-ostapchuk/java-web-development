@@ -4,15 +4,15 @@
 
 package com.epam.jwd.app;
 
-import com.epam.jwd.model.LineFactory;
-import com.epam.jwd.model.Pentagon;
-import com.epam.jwd.model.PentagonFactory;
+import com.epam.jwd.model.line.LineFactory;
+import com.epam.jwd.model.pentagon.Pentagon;
+import com.epam.jwd.model.pentagon.PentagonFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.model.SquareFactory;
-import com.epam.jwd.model.TriangleFactory;
-import com.epam.jwd.model.Line;
-import com.epam.jwd.model.Triangle;
-import com.epam.jwd.model.Square;
+import com.epam.jwd.model.square.SquareFactory;
+import com.epam.jwd.model.triangle.TriangleFactory;
+import com.epam.jwd.model.line.Line;
+import com.epam.jwd.model.triangle.Triangle;
+import com.epam.jwd.model.square.Square;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,6 +41,7 @@ public class Main {
         final List<Integer> xPentagonCoordinates = Arrays.asList(1, 2, 3, 4, 5);
         final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6);
 
+        List<Point> points = createPoints(xPointCoordinates, yPointCoordinates);
         List<Line> lines = createLines(xLineCoordinates, yLineCoordinates);
         List<Triangle> triangles = createTriangles(xTriangleCoordinates, yTriangleCoordinates);
         List<Square> squares = createSquares(xSquareCoordinates, ySquareCoordinates);
