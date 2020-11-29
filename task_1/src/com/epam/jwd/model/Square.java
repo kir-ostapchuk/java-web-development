@@ -2,16 +2,15 @@ package com.epam.jwd.model;
 
 import java.util.List;
 
-public class Square {
-    private List<Point> points;
+public class Square extends Figure {
 
     Square(List<Point> points) {
-        this.points = points;
+        super(points);
     }
 
-    public Point getPoint(int ind) {
-        return points.get(ind);
-    }
+//    public Point getPoint(int ind) {
+//        return points.get(ind);
+//    }
 
 //    public void setPoint1(Point point1) {
 //        this.point1 = point1;

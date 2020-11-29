@@ -24,7 +24,7 @@ public class TriangleFactory implements FigureFactory<Triangle> {
                 points.get(0).toString() + ", " +
                 points.get(1).toString() + ", " +
                 points.get(2).toString() + " was created");
-        return new Triangle(points.get(0), points.get(1), points.get(2));
+        return new Triangle(points);
     }
 
     private boolean canCreateTriangle(List<Point> points) {

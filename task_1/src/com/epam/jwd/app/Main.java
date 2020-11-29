@@ -38,8 +38,8 @@ public class Main {
         final List<Integer> xSquareCoordinates = Arrays.asList(1, 0, 1, 0);
         final List<Integer> ySquareCoordinates = Arrays.asList(0, 1, 1, 0);
 
-        final List<Integer> xPentagonCoordinates = Arrays.asList(1, 2, 3, 4, 5, 5, 6);
-        final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6, 7, 8);
+        final List<Integer> xPentagonCoordinates = Arrays.asList(1, 2, 3, 4, 5);
+        final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6);
 
         List<Line> lines = createLines(xLineCoordinates, yLineCoordinates);
         List<Triangle> triangles = createTriangles(xTriangleCoordinates, yTriangleCoordinates);

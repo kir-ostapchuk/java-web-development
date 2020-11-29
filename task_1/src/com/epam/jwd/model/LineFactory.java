@@ -22,7 +22,7 @@ public class LineFactory implements FigureFactory<Line> {
         LOGGER.info("Line: " +
                 points.get(0).toString() + ", " +
                 points.get(1).toString() + " was created");
-        return new Line(points.get(0), points.get(1));
+        return new Line(points);
     }
 
     private boolean canCreateLine(List<Point> points) {

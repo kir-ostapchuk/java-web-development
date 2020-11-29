@@ -22,7 +22,6 @@ public class PentagonFactory implements FigureFactory<Pentagon> {
                     points.get(3).toString() + ", " +
                     points.get(4).toString() + " was NOT created");
 
-
         }
         LOGGER.info("Pentagon: " +
                 points.get(0).toString() + ", " +
