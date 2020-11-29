@@ -2,7 +2,6 @@ package com.epam.jwd.strategy;
 
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.Square;
-import com.epam.jwd.model.Triangle;
 
 import java.util.ArrayList;
 import java.util.Collections;
