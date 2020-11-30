@@ -5,11 +5,11 @@ import com.epam.jwd.model.Point;
 
 import java.util.List;
 
-public enum PentagonStrategy implements AreaCalculator, PerimeterCalculator<Pentagon> {
+public enum PentagonStrategy implements AreaCalculator, PerimeterCalculator {
     INSTANCE;
 
     @Override
-    public double calculatePerimeter(Pentagon figure) {
+    public double calculatePerimeter(List<Point> points) {
         return 0;
     }
 

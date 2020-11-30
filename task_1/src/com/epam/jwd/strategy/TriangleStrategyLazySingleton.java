@@ -5,16 +5,16 @@ import com.epam.jwd.model.triangle.Triangle;
 
 import java.util.List;
 
-public class TriangleStrategyLazySingleton implements AreaCalculator, PerimeterCalculator<Triangle> {
+public class TriangleStrategyLazySingleton implements AreaCalculator, PerimeterCalculator {
 
     private TriangleStrategyLazySingleton() {
     }
 
     @Override
-    public double calculatePerimeter(Triangle triangle) {
-        double side1 = calculateSide(triangle.getPoint(0), triangle.getPoint(1));
-        double side2 = calculateSide(triangle.getPoint(1), triangle.getPoint(2));
-        double side3 = calculateSide(triangle.getPoint(0), triangle.getPoint(2));
+    public double calculatePerimeter(List<Point> points) {
+        double side1 = calculateSide(points.get(0), points.get(1));
+        double side2 = calculateSide(points.get(1), points.get(2));
+        double side3 = calculateSide(points.get(0), points.get(2));
 
         return side1 + side2 + side3;
     }

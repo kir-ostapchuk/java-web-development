@@ -1,5 +1,9 @@
 package com.epam.jwd.strategy;
 
-public interface PerimeterCalculator<T> {
-    double calculatePerimeter(T figure);
+import com.epam.jwd.model.Point;
+
+import java.util.List;
+
+public interface PerimeterCalculator {
+    double calculatePerimeter(List<Point> points);
 }

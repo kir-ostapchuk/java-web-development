@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public enum SquareStrategy implements AreaCalculator, PerimeterCalculator<Square> {
+public enum SquareStrategy implements AreaCalculator, PerimeterCalculator {
     INSTANCE;
 
     @Override
-    public double calculatePerimeter(Square square) {
+    public double calculatePerimeter(List<Point> points) {
         List<Double> sides = calculateAllSides(
-                square.getPoint(0), square.getPoint(1),
-                square.getPoint(2), square.getPoint(3));
+                points.get(0), points.get(1),
+                points.get(2), points.get(3));
         return sides.get(0) * 4;
     }
 
