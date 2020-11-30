@@ -3,7 +3,7 @@ package com.epam.jwd.strategy;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.triangle.Triangle;
 
-public class TriangleStrategyLazySingleton implements GeometricCalculationStrategy<Triangle> {
+public class TriangleStrategyLazySingleton implements CalculateAreaStrategy<Triangle>, CalculatePerimeterStrategy<Triangle> {
 
     private TriangleStrategyLazySingleton() {
     }
