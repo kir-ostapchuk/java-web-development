@@ -14,7 +14,6 @@ import com.epam.jwd.model.triangle.TriangleFactory;
 import com.epam.jwd.model.line.Line;
 import com.epam.jwd.model.triangle.Triangle;
 import com.epam.jwd.model.square.Square;
-import com.epam.jwd.strategy.SquareStrategy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

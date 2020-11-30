@@ -1,6 +1,5 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.pentagon.Pentagon;
 import com.epam.jwd.model.Point;
 
 import java.util.List;
