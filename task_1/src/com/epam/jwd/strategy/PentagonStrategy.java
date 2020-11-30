@@ -12,7 +12,7 @@ public enum PentagonStrategy implements CalculateAreaStrategy<Pentagon>, Calcula
     }
 
     @Override
-    public double calculateSquare(Pentagon figure) {
+    public double calculateArea(Pentagon figure) {
         return 0;
     }
 

@@ -29,7 +29,7 @@ public class SquareStrategySingleton implements CalculateAreaStrategy<Square>, C
     }
 
     @Override
-    public double calculateSquare(Square square) {
+    public double calculateArea(Square square) {
         List<Double> sides = calculateAllSides(
                 square.getPoint(0), square.getPoint(1),
                 square.getPoint(2), square.getPoint(3));

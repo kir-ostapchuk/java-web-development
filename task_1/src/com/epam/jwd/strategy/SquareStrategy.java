@@ -19,7 +19,7 @@ public enum SquareStrategy implements CalculateAreaStrategy<Square>, CalculatePe
     }
 
     @Override
-    public double calculateSquare(Square square) {
+    public double calculateArea(Square square) {
         List<Double> sides = calculateAllSides(
                 square.getPoint(0), square.getPoint(1),
                 square.getPoint(2), square.getPoint(3));

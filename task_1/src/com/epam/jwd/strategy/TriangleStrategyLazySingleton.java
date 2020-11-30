@@ -18,7 +18,7 @@ public class TriangleStrategyLazySingleton implements CalculateAreaStrategy<Tria
     }
 
     @Override
-    public double calculateSquare(Triangle triangle) {
+    public double calculateArea(Triangle triangle) {
         double side1 = calculateSide(triangle.getPoint(1), triangle.getPoint(1));
         double side2 = calculateSide(triangle.getPoint(0), triangle.getPoint(2));
         double side3 = calculateSide(triangle.getPoint(0), triangle.getPoint(2));
