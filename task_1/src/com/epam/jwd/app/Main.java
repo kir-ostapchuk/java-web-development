@@ -1,8 +1,3 @@
-// TODO:
-// 1. create Figure to keep points amount (ex. for triangle = 3, for line= 2)
-// 2. hexagon
-// 3. functional interfaces
-
 package com.epam.jwd.app;
 
 import com.epam.jwd.model.line.LineFactory;
@@ -25,23 +20,22 @@ public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
+    private static final List<Integer> xPointCoordinates = Arrays.asList(1, 2, 3, 4);
+    private static final List<Integer> yPointCoordinates = Arrays.asList(4, 3, 2, 1);
+
+    private static final List<Integer> xLineCoordinates = Arrays.asList(-1, -2, -3, -4);
+    private static final List<Integer> yLineCoordinates = Arrays.asList(-4, -3, -2, -1);
+
+    private static final List<Integer> xTriangleCoordinates = Arrays.asList(-4, 3, -2, -1, 8, 9);
+    private static final List<Integer> yTriangleCoordinates = Arrays.asList(-4, -3, 2, -1, -8, -9);
+
+    private static final List<Integer> xSquareCoordinates = Arrays.asList(1, 0, 1, 0);
+    private static final List<Integer> ySquareCoordinates = Arrays.asList(0, 1, 1, 0);
+
+    private static final List<Integer> xPentagonCoordinates = Arrays.asList(1, 2, 3, 4, 5);
+    private static final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6);
+
     public static void main(String[] args) {
-
-        final List<Integer> xPointCoordinates = Arrays.asList(1, 2, 3, 4);
-        final List<Integer> yPointCoordinates = Arrays.asList(4, 3, 2, 1);
-
-        final List<Integer> xLineCoordinates = Arrays.asList(-1, -2, -3, -4);
-        final List<Integer> yLineCoordinates = Arrays.asList(-4, -3, -2, -1);
-
-        final List<Integer> xTriangleCoordinates = Arrays.asList(-4, 3, -2, -1, 8, 9);
-        final List<Integer> yTriangleCoordinates = Arrays.asList(-4, -3, 2, -1, -8, -9);
-
-        final List<Integer> xSquareCoordinates = Arrays.asList(1, 0, 1, 0);
-        final List<Integer> ySquareCoordinates = Arrays.asList(0, 1, 1, 0);
-
-        final List<Integer> xPentagonCoordinates = Arrays.asList(1, 2, 3, 4, 5);
-        final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6);
-
         List<Point> points = createPoints(xPointCoordinates, yPointCoordinates);
         List<Line> lines = createLines(xLineCoordinates, yLineCoordinates);
         List<Triangle> triangles = createTriangles(xTriangleCoordinates, yTriangleCoordinates);
