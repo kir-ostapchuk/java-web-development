@@ -16,4 +16,8 @@ public class Square extends Figure {
     double calculateArea() {
         return strategy.calculateArea(points);
     }
+
+    double calculatePerimeter() {
+        return strategy.calculatePerimeter(points);
+    }
 }
