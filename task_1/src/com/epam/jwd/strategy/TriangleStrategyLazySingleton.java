@@ -3,7 +3,9 @@ package com.epam.jwd.strategy;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.triangle.Triangle;
 
-public class TriangleStrategyLazySingleton implements AreaCalculator<Triangle>, PerimeterCalculator<Triangle> {
+import java.util.List;
+
+public class TriangleStrategyLazySingleton implements AreaCalculator, PerimeterCalculator<Triangle> {
 
     private TriangleStrategyLazySingleton() {
     }
@@ -18,10 +20,10 @@ public class TriangleStrategyLazySingleton implements AreaCalculator<Triangle>, 
     }
 
     @Override
-    public double calculateArea(Triangle triangle) {
-        double side1 = calculateSide(triangle.getPoint(1), triangle.getPoint(1));
-        double side2 = calculateSide(triangle.getPoint(0), triangle.getPoint(2));
-        double side3 = calculateSide(triangle.getPoint(0), triangle.getPoint(2));
+    public double calculateArea(List<Point> points) {
+        double side1 = calculateSide(points.get(1), points.get(1));
+        double side2 = calculateSide(points.get(0), points.get(2));
+        double side3 = calculateSide(points.get(0), points.get(2));
 
         double p = (side1 + side2 + side3) / 2;
         return  Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));

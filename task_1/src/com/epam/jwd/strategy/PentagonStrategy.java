@@ -3,7 +3,9 @@ package com.epam.jwd.strategy;
 import com.epam.jwd.model.pentagon.Pentagon;
 import com.epam.jwd.model.Point;
 
-public enum PentagonStrategy implements AreaCalculator<Pentagon>, PerimeterCalculator<Pentagon> {
+import java.util.List;
+
+public enum PentagonStrategy implements AreaCalculator, PerimeterCalculator<Pentagon> {
     INSTANCE;
 
     @Override
@@ -12,7 +14,7 @@ public enum PentagonStrategy implements AreaCalculator<Pentagon>, PerimeterCalcu
     }
 
     @Override
-    public double calculateArea(Pentagon figure) {
+    public double calculateArea(List<Point> points) {
         return 0;
     }
 

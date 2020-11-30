@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SquareStrategySingleton implements AreaCalculator<Square>, PerimeterCalculator<Square> {
+public class SquareStrategySingleton implements AreaCalculator, PerimeterCalculator<Square> {
     private static SquareStrategySingleton instance;
 
     private SquareStrategySingleton() {
@@ -29,10 +29,10 @@ public class SquareStrategySingleton implements AreaCalculator<Square>, Perimete
     }
 
     @Override
-    public double calculateArea(Square square) {
+    public double calculateArea(List<Point> points) {
         List<Double> sides = calculateAllSides(
-                square.getPoint(0), square.getPoint(1),
-                square.getPoint(2), square.getPoint(3));
+                points.get(0), points.get(1),
+                points.get(2), points.get(3));
         return sides.get(0) * sides.get(0);
     }
 
