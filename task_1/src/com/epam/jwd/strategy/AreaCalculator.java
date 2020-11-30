@@ -1,5 +1,6 @@
 package com.epam.jwd.strategy;
 
-public interface CalculateAreaStrategy<T> {
+@FunctionalInterface
+public interface AreaCalculator<T> {
     double calculateArea(T figure);
 }

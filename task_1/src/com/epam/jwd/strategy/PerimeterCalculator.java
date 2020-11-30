@@ -1,5 +1,5 @@
 package com.epam.jwd.strategy;
 
-public interface CalculatePerimeterStrategy<T> {
+public interface PerimeterCalculator<T> {
     double calculatePerimeter(T figure);
 }

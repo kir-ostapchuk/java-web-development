@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SquareStrategySingleton implements CalculateAreaStrategy<Square>, CalculatePerimeterStrategy<Square> {
+public class SquareStrategySingleton implements AreaCalculator<Square>, PerimeterCalculator<Square> {
     private static SquareStrategySingleton instance;
 
     private SquareStrategySingleton() {

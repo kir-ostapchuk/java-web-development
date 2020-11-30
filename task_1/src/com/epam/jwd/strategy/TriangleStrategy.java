@@ -3,7 +3,7 @@ package com.epam.jwd.strategy;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.triangle.Triangle;
 
-public enum TriangleStrategy implements CalculateAreaStrategy<Triangle>, CalculatePerimeterStrategy<Triangle> {
+public enum TriangleStrategy implements AreaCalculator<Triangle>, PerimeterCalculator<Triangle> {
     INSTANCE;
 
     @Override

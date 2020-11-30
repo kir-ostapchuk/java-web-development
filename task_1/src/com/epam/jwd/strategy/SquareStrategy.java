@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public enum SquareStrategy implements CalculateAreaStrategy<Square>, CalculatePerimeterStrategy<Square> {
+public enum SquareStrategy implements AreaCalculator<Square>, PerimeterCalculator<Square> {
     INSTANCE;
 
     @Override
