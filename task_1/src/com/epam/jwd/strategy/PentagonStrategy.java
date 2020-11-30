@@ -3,7 +3,7 @@ package com.epam.jwd.strategy;
 import com.epam.jwd.model.pentagon.Pentagon;
 import com.epam.jwd.model.Point;
 
-public enum PentagonStrategy implements GeometricCalcStrategy<Pentagon> {
+public enum PentagonStrategy implements GeometricCalculationStrategy<Pentagon> {
     INSTANCE;
 
     @Override

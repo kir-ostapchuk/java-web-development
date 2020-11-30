@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public enum SquareStrategy implements GeometricCalcStrategy<Square>{
+public enum SquareStrategy implements GeometricCalculationStrategy<Square> {
     INSTANCE;
 
     @Override

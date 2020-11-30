@@ -1,6 +1,6 @@
 package com.epam.jwd.strategy;
 
-public interface GeometricCalcStrategy<T> {
+public interface GeometricCalculationStrategy<T> {
     double calculatePerimeter(T figure);
     double calculateSquare(T figure);
 }

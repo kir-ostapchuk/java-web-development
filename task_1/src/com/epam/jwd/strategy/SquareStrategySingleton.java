@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SquareStrategySingleton implements GeometricCalcStrategy<Square> {
+public class SquareStrategySingleton implements GeometricCalculationStrategy<Square> {
     private static SquareStrategySingleton instance;
 
     private SquareStrategySingleton() {
