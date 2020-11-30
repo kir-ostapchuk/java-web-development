@@ -3,7 +3,7 @@ package com.epam.jwd.model;
 import java.util.List;
 
 public abstract class Figure {
-    private List<Point> points;
+    protected List<Point> points;
 
     public Figure(List<Point> points) {
         this.points = points;
