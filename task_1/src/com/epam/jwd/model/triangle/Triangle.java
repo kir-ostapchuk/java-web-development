@@ -2,7 +2,6 @@ package com.epam.jwd.model.triangle;
 
 import com.epam.jwd.model.Figure;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.strategy.SquareStrategySingleton;
 import com.epam.jwd.strategy.TriangleStrategy;
 
 import java.util.List;
