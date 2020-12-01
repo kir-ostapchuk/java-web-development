@@ -13,8 +13,6 @@ import java.util.List;
 
 public class Main {
 
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
-
     private static final List<Integer> xPointCoordinates = Arrays.asList(1, 2, 3, 4);
     private static final List<Integer> yPointCoordinates = Arrays.asList(4, 3, 2, 1);
 
