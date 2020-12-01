@@ -2,12 +2,12 @@ package com.epam.jwd.model.triangle;
 
 import com.epam.jwd.model.Figure;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.strategy.TriangleStrategy;
+import com.epam.jwd.strategy.TriangleCalculator;
 
 import java.util.List;
 
 public class Triangle extends Figure {
-    private TriangleStrategy strategy;
+    private TriangleCalculator strategy;
 
     Triangle(List<Point> points) {
         super(points);

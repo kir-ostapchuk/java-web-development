@@ -4,7 +4,7 @@ import com.epam.jwd.model.Point;
 
 import java.util.List;
 
-public enum PentagonStrategy implements AreaCalculator, PerimeterCalculator {
+public enum PentagonCalculator implements AreaCalculator, PerimeterCalculator {
     INSTANCE;
 
     @Override

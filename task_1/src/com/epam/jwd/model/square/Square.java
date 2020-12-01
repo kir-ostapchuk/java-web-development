@@ -2,12 +2,12 @@ package com.epam.jwd.model.square;
 
 import com.epam.jwd.model.Figure;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.strategy.SquareStrategy;
+import com.epam.jwd.strategy.SquareCalculator;
 
 import java.util.List;
 
 public class Square extends Figure {
-    SquareStrategy strategy;
+    SquareCalculator strategy;
 
     Square(List<Point> points) {
         super(points);

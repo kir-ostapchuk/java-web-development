@@ -2,12 +2,12 @@ package com.epam.jwd.model.pentagon;
 
 import com.epam.jwd.model.Figure;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.strategy.PentagonStrategy;
+import com.epam.jwd.strategy.PentagonCalculator;
 
 import java.util.List;
 
 public class Pentagon extends Figure {
-    PentagonStrategy strategy;
+    PentagonCalculator strategy;
 
     Pentagon(List<Point> points) {
         super(points);

@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SquareStrategySingleton implements AreaCalculator, PerimeterCalculator {
-    private static SquareStrategySingleton instance;
+public class SquareCalculatorSingleton implements AreaCalculator, PerimeterCalculator {
+    private static SquareCalculatorSingleton instance;
 
-    private SquareStrategySingleton() {
+    private SquareCalculatorSingleton() {
     }
 
-    public static SquareStrategySingleton getInstance() {
+    public static SquareCalculatorSingleton getInstance() {
         if (instance == null) {
-            instance = new SquareStrategySingleton();
+            instance = new SquareCalculatorSingleton();
         }
         return instance;
     }
