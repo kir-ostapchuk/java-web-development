@@ -5,11 +5,15 @@ import com.epam.jwd.model.Point;
 import com.epam.jwd.model.line.Line;
 import com.epam.jwd.model.triangle.Triangle;
 import com.epam.jwd.model.square.Square;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     private static final List<Integer> xPointCoordinates = Arrays.asList(1, 2, 3, 4);
     private static final List<Integer> yPointCoordinates = Arrays.asList(4, 3, 2, 1);
@@ -27,10 +31,14 @@ public class Main {
     private static final List<Integer> yPentagonCoordinates = Arrays.asList(4, 3, 2, 1, 6);
 
     public static void main(String[] args) {
-        List<Point> points = MainReport.createPoints(xPointCoordinates, yPointCoordinates);
-        List<Line> lines = MainReport.createLines(xLineCoordinates, yLineCoordinates);
-        List<Triangle> triangles = MainReport.createTriangles(xTriangleCoordinates, yTriangleCoordinates);
-        List<Square> squares = MainReport.createSquares(xSquareCoordinates, ySquareCoordinates);
-        List<Pentagon> pentagons = MainReport.createPentagons(xPentagonCoordinates, yPentagonCoordinates);
+        try {
+            List<Point> points = MainReport.createPoints(xPointCoordinates, yPointCoordinates);
+            List<Line> lines = MainReport.createLines(xLineCoordinates, yLineCoordinates);
+            List<Triangle> triangles = MainReport.createTriangles(xTriangleCoordinates, yTriangleCoordinates);
+            List<Square> squares = MainReport.createSquares(xSquareCoordinates, ySquareCoordinates);
+            List<Pentagon> pentagons = MainReport.createPentagons(xPentagonCoordinates, yPentagonCoordinates);
+        } catch (IllegalArgumentException exception) {
+            LOGGER.error(exception.getMessage());
+        }
     }
 }

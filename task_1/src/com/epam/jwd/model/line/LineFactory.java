@@ -29,7 +29,6 @@ public class LineFactory implements FigureFactory<Line> {
 
     private boolean canCreateLine(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);
-
         return compressPoints.size() == points.size();
     }
 }
