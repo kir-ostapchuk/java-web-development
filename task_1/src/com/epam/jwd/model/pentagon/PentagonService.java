@@ -3,7 +3,7 @@ package com.epam.jwd.model.pentagon;
 import com.epam.jwd.strategy.PentagonCalculator;
 
 public class PentagonService {
-    PentagonCalculator strategy;
+    private PentagonCalculator strategy;
 
     public double calculateArea(Pentagon pentagon) {
         return strategy.calculateArea(pentagon);
