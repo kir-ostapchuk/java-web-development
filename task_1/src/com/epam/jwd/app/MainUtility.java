@@ -1,5 +1,6 @@
 package com.epam.jwd.app;
 
+import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.line.Line;
 import com.epam.jwd.model.line.LineFactory;
@@ -28,7 +29,7 @@ public class MainUtility {
     }
 
     public static List<Line> createLines(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws IllegalArgumentException {
+            throws FigureNotExistException {
 
         List<Line> lines = new ArrayList<>();
         LineFactory lineFactory = new LineFactory();
@@ -44,7 +45,7 @@ public class MainUtility {
     }
 
     public static List<Triangle> createTriangles(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws IllegalArgumentException {
+            throws FigureNotExistException {
 
         List<Triangle> triangles = new ArrayList<>();
         TriangleFactory triangleFactory = new TriangleFactory();
@@ -60,7 +61,7 @@ public class MainUtility {
     }
 
     public static List<Square> createSquares(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws IllegalArgumentException {
+            throws FigureNotExistException {
 
         List<Square> squares = new ArrayList<>();
         SquareFactory squareFactory = new SquareFactory();
@@ -76,7 +77,7 @@ public class MainUtility {
     }
 
     public static List<Pentagon> createPentagons(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws IllegalArgumentException {
+            throws FigureNotExistException {
 
         List<Pentagon> pentagons = new ArrayList<>();
         PentagonFactory pentagonFactory = new PentagonFactory();

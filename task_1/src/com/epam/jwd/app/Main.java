@@ -1,5 +1,6 @@
 package com.epam.jwd.app;
 
+import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.pentagon.Pentagon;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.line.Line;
@@ -23,7 +24,7 @@ public class Main {
     private static final List<Integer> X_TRIANGLE_COORDINATES = Arrays.asList(-4, 3, -2, -1, 8, 9);
     private static final List<Integer> Y_TRIANGLE_COORDINATES = Arrays.asList(-4, -3, 2, -1, -8, -9);
 
-    private static final List<Integer> X_SQUARE_COORDINATES = Arrays.asList(1, 0, 1, 0);
+    private static final List<Integer> X_SQUARE_COORDINATES = Arrays.asList(10, 0, 1, 0);
     private static final List<Integer> Y_SQUARE_COORDINATES = Arrays.asList(0, 1, 1, 0);
 
     private static final List<Integer> X_PENTAGON_COORDINATES = Arrays.asList(1, 2, 3, 4, 5);
@@ -36,7 +37,7 @@ public class Main {
             List<Triangle> triangles = MainUtility.createTriangles(X_TRIANGLE_COORDINATES, Y_TRIANGLE_COORDINATES);
             List<Square> squares = MainUtility.createSquares(X_SQUARE_COORDINATES, Y_SQUARE_COORDINATES);
             List<Pentagon> pentagons = MainUtility.createPentagons(X_PENTAGON_COORDINATES, Y_PENTAGON_COORDINATES);
-        } catch (IllegalArgumentException exception) {
+        } catch (FigureNotExistException exception) {
             LOGGER.error(exception.getMessage());
         }
     }

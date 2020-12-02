@@ -1,5 +1,6 @@
 package com.epam.jwd.model.square;
 
+import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
 import org.apache.logging.log4j.LogManager;
@@ -16,10 +17,10 @@ public class SquareFactory implements FigureFactory<Square> {
     private static final Logger LOGGER = LogManager.getLogger(SquareFactory.class);
 
     @Override
-    public Square createFigure(List<Point> points) {
+    public Square createFigure(List<Point> points) throws FigureNotExistException {
         boolean isCreatable = canCreateSquare(points);
         if (!isCreatable) {
-            throw new IllegalArgumentException("Square: " +
+            throw new FigureNotExistException("Square: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
                     points.get(2).toString() + " was NOT created");

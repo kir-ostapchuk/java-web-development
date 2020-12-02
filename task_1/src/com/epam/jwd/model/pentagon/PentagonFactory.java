@@ -1,5 +1,6 @@
 package com.epam.jwd.model.pentagon;
 
+import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
 import org.apache.logging.log4j.LogManager;
@@ -14,10 +15,10 @@ public class PentagonFactory implements FigureFactory<Pentagon> {
     private static final Logger LOGGER = LogManager.getLogger(PentagonFactory.class);
 
     @Override
-    public Pentagon createFigure(List<Point> points) {
+    public Pentagon createFigure(List<Point> points) throws FigureNotExistException {
         boolean isCreatable = canCreatePentagon(points);
         if (!isCreatable) {
-            throw new IllegalArgumentException("Pentagon: " +
+            throw new FigureNotExistException("Pentagon: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
                     points.get(2).toString() + ", " +

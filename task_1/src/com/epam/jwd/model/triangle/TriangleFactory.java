@@ -1,5 +1,6 @@
 package com.epam.jwd.model.triangle;
 
+import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
 import org.apache.logging.log4j.LogManager;
@@ -14,10 +15,10 @@ public class TriangleFactory implements FigureFactory<Triangle> {
     private static final Logger LOGGER = LogManager.getLogger(TriangleFactory.class);
 
     @Override
-    public Triangle createFigure(List<Point> points) {
+    public Triangle createFigure(List<Point> points) throws FigureNotExistException {
         boolean isCreatable = canCreateTriangle(points);
         if (!isCreatable) {
-            throw new IllegalArgumentException("Triangle: " +
+            throw new FigureNotExistException("Triangle: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
                     points.get(2).toString() + " was NOT created");

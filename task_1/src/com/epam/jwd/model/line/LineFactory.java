@@ -1,5 +1,6 @@
 package com.epam.jwd.model.line;
 
+import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
 import org.apache.logging.log4j.LogManager;
@@ -14,10 +15,10 @@ public class LineFactory implements FigureFactory<Line> {
     private static final Logger LOGGER = LogManager.getLogger(LineFactory.class);
 
     @Override
-    public Line createFigure(List<Point> points) {
+    public Line createFigure(List<Point> points) throws FigureNotExistException{
         boolean isCreatable = canCreateLine(points);
         if (!isCreatable) {
-            throw new IllegalArgumentException("Line: " +
+            throw new FigureNotExistException("Line: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + " was NOT created");
         }
