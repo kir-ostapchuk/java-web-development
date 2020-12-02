@@ -17,6 +17,7 @@ public class LineFactory implements FigureFactory<Line> {
     @Override
     public Line createFigure(List<Point> points) throws FigureNotExistException{
         boolean isCreatable = canCreateLine(points);
+//        checkCreatability(isCreatable);
         if (!isCreatable) {
             throw new FigureNotExistException("Line: " +
                     points.get(0).toString() + ", " +

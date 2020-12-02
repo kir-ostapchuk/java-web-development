@@ -7,7 +7,7 @@ import com.epam.jwd.strategy.SquareCalculator;
 import java.util.List;
 
 public class Square extends Figure {
-    SquareCalculator strategy;
+    private SquareCalculator strategy;
 
     Square(List<Point> points) {
         super(points);

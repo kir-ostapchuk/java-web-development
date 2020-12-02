@@ -7,7 +7,7 @@ import com.epam.jwd.strategy.PentagonCalculator;
 import java.util.List;
 
 public class Pentagon extends Figure {
-    PentagonCalculator strategy;
+    private PentagonCalculator strategy;
 
     Pentagon(List<Point> points) {
         super(points);
