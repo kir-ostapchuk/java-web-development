@@ -1,10 +1,8 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.Point;
-
-import java.util.List;
+import com.epam.jwd.model.MultiAngleFigure;
 
 @FunctionalInterface
-public interface AreaCalculator {
-    double calculateArea(List<Point> points);
+public interface AreaCalculator<T extends MultiAngleFigure> {
+    double calculateArea(T multiAngleFigure);
 }

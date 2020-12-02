@@ -1,19 +1,18 @@
 package com.epam.jwd.strategy;
 
 import com.epam.jwd.model.Point;
+import com.epam.jwd.model.pentagon.Pentagon;
 
-import java.util.List;
-
-public enum PentagonCalculator implements AreaCalculator, PerimeterCalculator {
+public enum PentagonCalculator implements AreaCalculator<Pentagon>, PerimeterCalculator<Pentagon>{
     INSTANCE;
 
     @Override
-    public double calculatePerimeter(List<Point> points) {
+    public double calculateArea(Pentagon pentagon) {
         return 0;
     }
 
     @Override
-    public double calculateArea(List<Point> points) {
+    public double calculatePerimeter(Pentagon pentagon) {
         return 0;
     }
 
@@ -22,4 +21,5 @@ public enum PentagonCalculator implements AreaCalculator, PerimeterCalculator {
                 point1.getX() - point2.getX(),
                 point1.getY() - point2.getY());
     }
+
 }

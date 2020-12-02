@@ -1,10 +1,8 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.Point;
-
-import java.util.List;
+import com.epam.jwd.model.MultiAngleFigure;
 
 @FunctionalInterface
-public interface PerimeterCalculator {
-    double calculatePerimeter(List<Point> points);
+public interface PerimeterCalculator<T extends MultiAngleFigure> {
+    double calculatePerimeter(T multiAngleFigure);
 }
