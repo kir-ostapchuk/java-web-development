@@ -32,11 +32,11 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            List<Point> points = MainReport.createPoints(xPointCoordinates, yPointCoordinates);
-            List<Line> lines = MainReport.createLines(xLineCoordinates, yLineCoordinates);
-            List<Triangle> triangles = MainReport.createTriangles(xTriangleCoordinates, yTriangleCoordinates);
-            List<Square> squares = MainReport.createSquares(xSquareCoordinates, ySquareCoordinates);
-            List<Pentagon> pentagons = MainReport.createPentagons(xPentagonCoordinates, yPentagonCoordinates);
+            List<Point> points = MainUtility.createPoints(xPointCoordinates, yPointCoordinates);
+            List<Line> lines = MainUtility.createLines(xLineCoordinates, yLineCoordinates);
+            List<Triangle> triangles = MainUtility.createTriangles(xTriangleCoordinates, yTriangleCoordinates);
+            List<Square> squares = MainUtility.createSquares(xSquareCoordinates, ySquareCoordinates);
+            List<Pentagon> pentagons = MainUtility.createPentagons(xPentagonCoordinates, yPentagonCoordinates);
         } catch (IllegalArgumentException exception) {
             LOGGER.error(exception.getMessage());
         }

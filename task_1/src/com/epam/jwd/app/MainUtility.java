@@ -13,7 +13,11 @@ import com.epam.jwd.model.triangle.TriangleFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainReport {
+public class MainUtility {
+    private MainUtility() {
+        throw new AssertionError();
+    }
+
     public static List<Point> createPoints(List<Integer> xCoordinates, List<Integer> yCoordinates) {
 
         List<Point> points = new ArrayList<>();
