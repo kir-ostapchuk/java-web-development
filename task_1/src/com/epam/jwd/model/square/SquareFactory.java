@@ -23,13 +23,15 @@ public class SquareFactory implements FigureFactory<Square> {
             throw new FigureNotExistException("Square: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
-                    points.get(2).toString() + " was NOT created");
+                    points.get(2).toString() + ", " +
+                    points.get(3).toString() + " was NOT created");
 
         }
         LOGGER.info("Square: " +
                 points.get(0).toString() + ", " +
                 points.get(1).toString() + ", " +
-                points.get(2).toString() + " was created");
+                points.get(2).toString() + ", " +
+                points.get(3).toString() + " was created");
 
         return new Square(points);
     }
