@@ -4,7 +4,7 @@ import com.epam.jwd.model.Point;
 
 import java.util.List;
 
-public class TriangleCalculatorLazySingleton implements AreaCalculator, PerimeterCalculator {
+public final class TriangleCalculatorLazySingleton implements AreaCalculator, PerimeterCalculator {
 
     private TriangleCalculatorLazySingleton() {
     }

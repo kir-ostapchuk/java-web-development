@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SquareCalculatorSingleton implements AreaCalculator, PerimeterCalculator {
+public final class SquareCalculatorSingleton implements AreaCalculator, PerimeterCalculator {
     private static SquareCalculatorSingleton instance;
 
     private SquareCalculatorSingleton() {
