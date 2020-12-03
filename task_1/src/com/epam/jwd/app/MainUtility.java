@@ -32,7 +32,7 @@ public class MainUtility {
             throws FigureNotExistException {
 
         List<Line> lines = new ArrayList<>();
-        LineFactory lineFactory = new LineFactory();
+        LineFactory lineFactory = LineFactory.INSTANCE;
 
         List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
         List<Point> twoPoints;
@@ -48,7 +48,7 @@ public class MainUtility {
             throws FigureNotExistException {
 
         List<Triangle> triangles = new ArrayList<>();
-        TriangleFactory triangleFactory = new TriangleFactory();
+        TriangleFactory triangleFactory = TriangleFactory.INSTANCE;
 
         List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
         List<Point> threePoints;
@@ -64,7 +64,7 @@ public class MainUtility {
             throws FigureNotExistException {
 
         List<Square> squares = new ArrayList<>();
-        SquareFactory squareFactory = new SquareFactory();
+        SquareFactory squareFactory = SquareFactory.INSTANCE;
 
         List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
         List<Point> fourPoints;
@@ -80,7 +80,7 @@ public class MainUtility {
             throws FigureNotExistException {
 
         List<Pentagon> pentagons = new ArrayList<>();
-        PentagonFactory pentagonFactory = new PentagonFactory();
+        PentagonFactory pentagonFactory = PentagonFactory.INSTANCE;
 
         List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
         List<Point> fivePoints;

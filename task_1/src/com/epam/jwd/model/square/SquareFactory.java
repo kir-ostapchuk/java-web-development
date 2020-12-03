@@ -9,7 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-public class SquareFactory implements FigureFactory<Square> {
+public enum SquareFactory implements FigureFactory<Square> {
+    INSTANCE;
 
     private static final Logger LOGGER = LogManager.getLogger(SquareFactory.class);
 

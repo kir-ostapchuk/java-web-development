@@ -7,11 +7,10 @@ import com.epam.jwd.service.impl.PentagonExistenceBeforeProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class PentagonFactory implements FigureFactory<Pentagon> {
+public enum PentagonFactory implements FigureFactory<Pentagon> {
+    INSTANCE;
 
     private static final Logger LOGGER = LogManager.getLogger(PentagonFactory.class);
 
