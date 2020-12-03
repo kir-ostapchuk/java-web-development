@@ -3,12 +3,11 @@ package com.epam.jwd.model.triangle;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
+import com.epam.jwd.service.impl.TriangleExistenceBeforeProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class TriangleFactory implements FigureFactory<Triangle> {
 
@@ -16,7 +15,8 @@ public class TriangleFactory implements FigureFactory<Triangle> {
 
     @Override
     public Triangle createFigure(List<Point> points) throws FigureNotExistException {
-        boolean isCreatable = canCreateTriangle(points);
+        TriangleExistenceBeforeProcessor processor = new TriangleExistenceBeforeProcessor();
+        boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Triangle: " +
                     points.get(0).toString() + ", " +
@@ -28,18 +28,5 @@ public class TriangleFactory implements FigureFactory<Triangle> {
                 points.get(1).toString() + ", " +
                 points.get(2).toString() + " was created");
         return new Triangle(points);
-    }
-
-    private boolean canCreateTriangle(List<Point> points) {
-        Set<Point> compressPoints = new HashSet(points);
-
-        if (compressPoints.size() == points.size()) {
-            int answer = points.get(0).getX() * (points.get(1).getY() - points.get(2).getY()) +
-                    points.get(1).getX() * (points.get(1).getY() - points.get(2).getY()) +
-                    points.get(1).getX() * (points.get(1).getY() - points.get(2).getY());
-            return answer != 0;
-        } else {
-            return false;
-        }
     }
 }

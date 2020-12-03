@@ -3,12 +3,11 @@ package com.epam.jwd.model.line;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
+import com.epam.jwd.service.impl.LineExistenceBeforeProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class LineFactory implements FigureFactory<Line> {
 
@@ -16,7 +15,8 @@ public class LineFactory implements FigureFactory<Line> {
 
     @Override
     public Line createFigure(List<Point> points) throws FigureNotExistException{
-        boolean isCreatable = canCreateLine(points);
+        LineExistenceBeforeProcessor processor = new LineExistenceBeforeProcessor();
+        boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Line: " +
                     points.get(0).toString() + ", " +
@@ -26,10 +26,5 @@ public class LineFactory implements FigureFactory<Line> {
                 points.get(0).toString() + ", " +
                 points.get(1).toString() + " was created");
         return new Line(points);
-    }
-
-    private boolean canCreateLine(List<Point> points) {
-        Set<Point> compressPoints = new HashSet(points);
-        return compressPoints.size() == points.size();
     }
 }

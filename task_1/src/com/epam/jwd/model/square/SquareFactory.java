@@ -3,14 +3,11 @@ package com.epam.jwd.model.square;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
+import com.epam.jwd.service.impl.SquareExistenceBeforeProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
-import static com.epam.jwd.model.Point.squareDis;
 
 public class SquareFactory implements FigureFactory<Square> {
 
@@ -18,7 +15,8 @@ public class SquareFactory implements FigureFactory<Square> {
 
     @Override
     public Square createFigure(List<Point> points) throws FigureNotExistException {
-        boolean isCreatable = canCreateSquare(points);
+        SquareExistenceBeforeProcessor processor = new SquareExistenceBeforeProcessor();
+        boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Square: " +
                     points.get(0).toString() + ", " +
@@ -34,38 +32,5 @@ public class SquareFactory implements FigureFactory<Square> {
                 points.get(3).toString() + " was created");
 
         return new Square(points);
-    }
-
-    private boolean canCreateSquare(List<Point> points) {
-        Set<Point> compressPoints = new HashSet(points);
-        if (compressPoints.size() != points.size()) {
-            return false;
-        }
-
-        return isSquare(points.get(0), points.get(1), points.get(2), points.get(3));
-    }
-
-    private boolean isSquare(Point p1, Point p2, Point p3, Point p4) {
-        int d2 = squareDis(p1, p2);
-        int d3 = squareDis(p1, p3);
-        int d4 = squareDis(p1, p4);
-
-        if (d2 == 0 || d3 == 0 || d4 == 0) {
-            return false;
-        }
-        if (d2 == d3 && 2 * d2 == d4 &&
-                (2 * squareDis(p2, p4) == squareDis(p2, p3))) {
-            return true;
-        }
-        if (d3 == d4 && 2 * d3 == d2 &&
-                (2 * squareDis(p3, p2) == squareDis(p3, p4))) {
-            return true;
-        }
-        if (d2 == d4 && 2 * d2 == d3 &&
-                (2 * squareDis(p2, p3) == squareDis(p2, p4))) {
-            return true;
-        }
-
-        return false;
     }
 }
