@@ -1,13 +1,13 @@
 package com.epam.jwd.service.impl;
 
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.FigureBeforeProcessor;
+import com.epam.jwd.service.FigurePreProcessor;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class LineExistenceBeforeProcessor implements FigureBeforeProcessor {
+public class LineExistencePreProcessor implements FigurePreProcessor {
 
     @Override
     public boolean process(List<Point> points) {

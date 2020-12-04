@@ -3,7 +3,7 @@ package com.epam.jwd.model.square;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.SquareExistenceBeforeProcessor;
+import com.epam.jwd.service.impl.SquareExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public enum SquareFactory implements FigureFactory<Square> {
 
     @Override
     public Square createFigure(List<Point> points) throws FigureNotExistException {
-        SquareExistenceBeforeProcessor processor = new SquareExistenceBeforeProcessor();
+        SquareExistencePreProcessor processor = new SquareExistencePreProcessor();
         boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Square: " +

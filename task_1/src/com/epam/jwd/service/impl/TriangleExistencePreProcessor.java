@@ -1,9 +1,8 @@
 package com.epam.jwd.service.impl;
 
-import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.triangle.TriangleFactory;
-import com.epam.jwd.service.FigureBeforeProcessor;
+import com.epam.jwd.service.FigurePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,7 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class TriangleExistenceBeforeProcessor implements FigureBeforeProcessor {
+public class TriangleExistencePreProcessor implements FigurePreProcessor {
 
     private static final Logger LOGGER = LogManager.getLogger(TriangleFactory.class);
 

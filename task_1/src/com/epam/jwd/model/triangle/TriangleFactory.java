@@ -3,7 +3,7 @@ package com.epam.jwd.model.triangle;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.TriangleExistenceBeforeProcessor;
+import com.epam.jwd.service.impl.TriangleExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public enum TriangleFactory implements FigureFactory<Triangle> {
 
     @Override
     public Triangle createFigure(List<Point> points) throws FigureNotExistException {
-        TriangleExistenceBeforeProcessor processor = new TriangleExistenceBeforeProcessor();
+        TriangleExistencePreProcessor processor = new TriangleExistencePreProcessor();
         boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Triangle: " +

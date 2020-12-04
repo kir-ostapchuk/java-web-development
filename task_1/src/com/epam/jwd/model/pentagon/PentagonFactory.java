@@ -3,7 +3,7 @@ package com.epam.jwd.model.pentagon;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.PentagonExistenceBeforeProcessor;
+import com.epam.jwd.service.impl.PentagonExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public enum PentagonFactory implements FigureFactory<Pentagon> {
 
     @Override
     public Pentagon createFigure(List<Point> points) throws FigureNotExistException {
-        PentagonExistenceBeforeProcessor processor = new PentagonExistenceBeforeProcessor();
+        PentagonExistencePreProcessor processor = new PentagonExistencePreProcessor();
         boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Pentagon: " +

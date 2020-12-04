@@ -1,7 +1,7 @@
 package com.epam.jwd.service.impl;
 
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.FigureBeforeProcessor;
+import com.epam.jwd.service.FigurePreProcessor;
 
 import java.util.HashSet;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.Set;
 
 import static com.epam.jwd.model.Point.squareDis;
 
-public class SquareExistenceBeforeProcessor implements FigureBeforeProcessor {
+public class SquareExistencePreProcessor implements FigurePreProcessor {
     @Override
     public boolean process(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);

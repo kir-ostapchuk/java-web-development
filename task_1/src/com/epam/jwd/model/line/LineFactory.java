@@ -3,7 +3,7 @@ package com.epam.jwd.model.line;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.LineExistenceBeforeProcessor;
+import com.epam.jwd.service.impl.LineExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public enum LineFactory implements FigureFactory<Line> {
 
     @Override
     public Line createFigure(List<Point> points) throws FigureNotExistException{
-        LineExistenceBeforeProcessor processor = new LineExistenceBeforeProcessor();
+        LineExistencePreProcessor processor = new LineExistencePreProcessor();
         boolean isCreatable = processor.process(points);
         if (!isCreatable) {
             throw new FigureNotExistException("Line: " +

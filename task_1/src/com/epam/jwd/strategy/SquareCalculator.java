@@ -17,7 +17,6 @@ public enum SquareCalculator implements AreaCalculator<Square>, PerimeterCalcula
                 square.getPoint(2), square.getPoint(3));
         return sides.get(0) * 4;
     }
-
     @Override
     public double calculateArea(Square square) {
         List<Double> sides = calculateAllSides(
