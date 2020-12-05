@@ -1,8 +1,8 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.MultiAngleFigure;
+import com.epam.jwd.model.Figure;
 
 @FunctionalInterface
-public interface AreaCalculator<T extends MultiAngleFigure> {
-    double calculateArea(T multiAngleFigure);
+public interface AreaCalculator<T extends Figure> {
+    double calculateArea(T figure);
 }

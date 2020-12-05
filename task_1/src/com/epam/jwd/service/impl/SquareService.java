@@ -1,10 +1,10 @@
 package com.epam.jwd.service.impl;
 
 import com.epam.jwd.model.square.Square;
-import com.epam.jwd.service.MultiAngleFigureService;
+import com.epam.jwd.service.FigureService;
 import com.epam.jwd.strategy.SquareCalculator;
 
-public class SquareService implements MultiAngleFigureService<Square> {
+public class SquareService implements FigureService<Square> {
     private SquareCalculator strategy;
 
     @Override

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PentagonExistencePreProcessor implements FigurePreProcessor {
+public class MultiAngleFigureExistencePreProcessor implements FigurePreProcessor {
     @Override
     public boolean process(List<Point> points) {
         Set<Point> compressPoints = new HashSet(points);

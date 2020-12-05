@@ -4,8 +4,8 @@ import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.line.Line;
 import com.epam.jwd.model.line.LineFactory;
-import com.epam.jwd.model.pentagon.Pentagon;
-import com.epam.jwd.model.pentagon.PentagonFactory;
+import com.epam.jwd.model.subfigures.MultiAngleFigure;
+import com.epam.jwd.model.subfigures.MultiAngleFigureFactory;
 import com.epam.jwd.model.square.Square;
 import com.epam.jwd.model.square.SquareFactory;
 import com.epam.jwd.model.triangle.Triangle;
@@ -76,18 +76,18 @@ public class MainUtility {
         return squares;
     }
 
-    public static List<Pentagon> createPentagons(List<Integer> xCoordinates, List<Integer> yCoordinates)
+    public static List<MultiAngleFigure> createMultiAngleFigures(List<Integer> xCoordinates, List<Integer> yCoordinates)
             throws FigureNotExistException {
 
-        List<Pentagon> pentagons = new ArrayList<>();
-        PentagonFactory pentagonFactory = PentagonFactory.INSTANCE;
+        List<MultiAngleFigure> pentagons = new ArrayList<>();
+        MultiAngleFigureFactory multiAngleFigureFactory = MultiAngleFigureFactory.INSTANCE;
 
         List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
         List<Point> fivePoints;
 
         for (int i = 0; i <= allPoints.size() - 5; i += 5) {
             fivePoints = allPoints.subList(i, i + 5);
-            pentagons.add(pentagonFactory.createFigure(fivePoints));
+            pentagons.add(multiAngleFigureFactory.createFigure(fivePoints));
         }
 
         return pentagons;

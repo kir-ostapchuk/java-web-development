@@ -1,8 +1,8 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.MultiAngleFigure;
+import com.epam.jwd.model.Figure;
 
 @FunctionalInterface
-public interface PerimeterCalculator<T extends MultiAngleFigure> {
-    double calculatePerimeter(T multiAngleFigure);
+public interface PerimeterCalculator<T extends Figure> {
+    double calculatePerimeter(T figure);
 }

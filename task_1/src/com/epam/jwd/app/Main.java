@@ -1,7 +1,7 @@
 package com.epam.jwd.app;
 
 import com.epam.jwd.exception.FigureNotExistException;
-import com.epam.jwd.model.pentagon.Pentagon;
+import com.epam.jwd.model.subfigures.MultiAngleFigure;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.line.Line;
 import com.epam.jwd.model.triangle.Triangle;
@@ -36,7 +36,8 @@ public class Main {
             List<Line> lines = MainUtility.createLines(X_LINE_COORDINATES, Y_LINE_COORDINATES);
             List<Triangle> triangles = MainUtility.createTriangles(X_TRIANGLE_COORDINATES, Y_TRIANGLE_COORDINATES);
             List<Square> squares = MainUtility.createSquares(X_SQUARE_COORDINATES, Y_SQUARE_COORDINATES);
-            List<Pentagon> pentagons = MainUtility.createPentagons(X_PENTAGON_COORDINATES, Y_PENTAGON_COORDINATES);
+            List<MultiAngleFigure> multiAngleFigures =
+                    MainUtility.createMultiAngleFigures(X_PENTAGON_COORDINATES, Y_PENTAGON_COORDINATES);
         } catch (FigureNotExistException exception) {
             LOGGER.error(exception.getMessage());
         }
