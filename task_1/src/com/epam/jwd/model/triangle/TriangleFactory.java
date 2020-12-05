@@ -3,7 +3,7 @@ package com.epam.jwd.model.triangle;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.TriangleExistencePreProcessor;
+import com.epam.jwd.service.impl.preprocessor.TriangleExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

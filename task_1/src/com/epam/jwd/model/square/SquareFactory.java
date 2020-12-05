@@ -3,7 +3,7 @@ package com.epam.jwd.model.square;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.SquareExistencePreProcessor;
+import com.epam.jwd.service.impl.preprocessor.SquareExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

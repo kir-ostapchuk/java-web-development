@@ -1,4 +1,4 @@
-package com.epam.jwd.service.impl;
+package com.epam.jwd.service.impl.preprocessor;
 
 import com.epam.jwd.model.Point;
 import com.epam.jwd.service.FigurePreProcessor;

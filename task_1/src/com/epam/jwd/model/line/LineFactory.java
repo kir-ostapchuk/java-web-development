@@ -3,7 +3,7 @@ package com.epam.jwd.model.line;
 import com.epam.jwd.exception.FigureNotExistException;
 import com.epam.jwd.model.FigureFactory;
 import com.epam.jwd.model.Point;
-import com.epam.jwd.service.impl.LineExistencePreProcessor;
+import com.epam.jwd.service.impl.preprocessor.LineExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
