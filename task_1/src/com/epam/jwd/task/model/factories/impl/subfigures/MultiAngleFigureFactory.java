@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public enum MultiAngleFigureFactory implements FigureFactory<MultiAngleFigure> {
+
     INSTANCE;
 
     private static final Logger LOGGER = LogManager.getLogger(MultiAngleFigureFactory.class);

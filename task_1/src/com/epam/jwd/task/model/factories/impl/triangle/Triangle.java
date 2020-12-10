@@ -6,6 +6,9 @@ import com.epam.jwd.task.model.Point;
 import java.util.List;
 
 public final class Triangle extends Figure {
+
+    static List<Triangle> trianglesPool;
+
     Triangle(List<Point> points) {
         super(points);
     }

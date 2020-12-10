@@ -6,6 +6,9 @@ import com.epam.jwd.task.model.Point;
 import java.util.List;
 
 public final class Line extends Figure {
+
+    static List<Line> linesPool;
+
     Line(List<Point> points) {
         super(points);
     }
