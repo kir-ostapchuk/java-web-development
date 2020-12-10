@@ -5,7 +5,7 @@ import com.epam.jwd.task.model.Point;
 
 import java.util.List;
 
-public class MultiAngleFigure extends Figure {
+public final class MultiAngleFigure extends Figure {
     MultiAngleFigure(List<Point> points) {
         super(points);
     }

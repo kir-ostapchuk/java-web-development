@@ -5,7 +5,7 @@ import com.epam.jwd.task.model.Point;
 
 import java.util.List;
 
-public class Square extends Figure {
+public final class Square extends Figure {
     Square(List<Point> points) {
         super(points);
     }
