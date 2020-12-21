@@ -1,5 +1,6 @@
-package com.epam.jwd.task.decorators;
+package com.epam.jwd.task.decorators.impl;
 
+import com.epam.jwd.task.decorators.PreProcessingDecorator;
 import com.epam.jwd.task.model.factories.FigureFactory;
 import com.epam.jwd.task.model.factories.impl.triangle.Triangle;
 import com.epam.jwd.task.preprocessors.impl.TriangleExistencePreProcessor;
@@ -10,6 +11,7 @@ public class TrianglePreProcessingDecorator extends PreProcessingDecorator<Trian
 
     public TrianglePreProcessingDecorator(FigureFactory<Triangle> figureFactory) {
         super(figureFactory);
+        System.out.println("TRIANGLE PREPROCESSOR");
         setPreProcessors(Collections.singletonList(
                 new TriangleExistencePreProcessor()));
     }

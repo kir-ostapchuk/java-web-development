@@ -1,7 +1,7 @@
 package com.epam.jwd.task.context.impl;
 
 import com.epam.jwd.task.context.ApplicationContext;
-import com.epam.jwd.task.decorators.MultiAngleFigurePreProcessingDecorator;
+import com.epam.jwd.task.decorators.impl.MultiAngleFigurePreProcessingDecorator;
 import com.epam.jwd.task.model.factories.FigureFactory;
 import com.epam.jwd.task.model.factories.impl.subfigures.MultiAngleFigure;
 

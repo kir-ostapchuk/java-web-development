@@ -1,10 +1,10 @@
 package com.epam.jwd.task.service.impl;
 
-import com.epam.jwd.task.service.FigureService;
+import com.epam.jwd.task.service.FigureCalculationService;
 import com.epam.jwd.task.model.factories.impl.triangle.Triangle;
 import com.epam.jwd.task.calculations.impl.TriangleCalculator;
 
-public class TriangleService implements FigureService<Triangle> {
+public class TriangleService implements FigureCalculationService<Triangle> {
     private TriangleCalculator strategy;
 
     @Override

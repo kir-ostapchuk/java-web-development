@@ -19,7 +19,6 @@ public class TriangleExistencePreProcessor implements ExistencePreProcessor {
     @Override
     public void preProcess(List<Point> points) throws FigureException {
         Set<Point> compressPoints = new HashSet<>(points);
-
         if (compressPoints.size() != points.size()) {
             throw new FigureNotExistException("Triangle: " +
                     points.get(0).toString() + ", " +
@@ -40,6 +39,6 @@ public class TriangleExistencePreProcessor implements ExistencePreProcessor {
                 points.get(0).getX() * (points.get(1).getY() - points.get(2).getY()) +
                         points.get(1).getX() * (points.get(1).getY() - points.get(2).getY()) +
                         points.get(1).getX() * (points.get(1).getY() - points.get(2).getY());
-        return answer != 0;
+        return answer >= 0;
     }
 }

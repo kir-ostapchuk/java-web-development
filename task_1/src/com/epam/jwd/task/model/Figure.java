@@ -1,30 +1,28 @@
 package com.epam.jwd.task.model;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.UUID;
 
 public abstract class Figure {
 
-    protected List<Point> points;
+    private final String name;
+    private final UUID id;
+    private final Color color;
 
-    public Figure(List<Point> points) {
-        this.points = points;
+    public Figure(String name, Color color) {
+        this.name = name;
+        this.color = color;
+        id = UUID.randomUUID();
     }
 
-    public Point getPoint(int ind) {
-        return points.get(ind);
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Figure figure = (Figure) o;
-        return Objects.equals(points, figure.points);
+    public UUID getId() {
+        return id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(points);
+    public Color getColor() {
+        return color;
     }
 }

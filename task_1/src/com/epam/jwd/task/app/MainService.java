@@ -2,20 +2,14 @@ package com.epam.jwd.task.app;
 
 import com.epam.jwd.task.context.ApplicationContext;
 import com.epam.jwd.task.context.impl.LineApplicationContext;
-import com.epam.jwd.task.context.impl.MultiAngleApplicationContext;
-import com.epam.jwd.task.context.impl.SquareApplicationContext;
-import com.epam.jwd.task.context.impl.TriangleApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.model.factories.FigureFactory;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.factories.impl.line.Line;
 import com.epam.jwd.task.model.factories.impl.line.LineFactory;
-import com.epam.jwd.task.model.factories.impl.subfigures.MultiAngleFigure;
-import com.epam.jwd.task.model.factories.impl.subfigures.MultiAngleFigureFactory;
-import com.epam.jwd.task.model.factories.impl.square.Square;
-import com.epam.jwd.task.model.factories.impl.square.SquareFactory;
-import com.epam.jwd.task.model.factories.impl.triangle.Triangle;
-import com.epam.jwd.task.model.factories.impl.triangle.TriangleFactory;
+import com.epam.jwd.task.service.FigureCrud;
+import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.storage.impl.LineStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +28,10 @@ class MainService {
         return points;
     }
 
-    public static List<Line> createLines(List<Integer> xCoordinates, List<Integer> yCoordinates)
+    public static List<Line> createLines(List<Integer> xCoordinates,
+                                         List<Integer> yCoordinates,
+                                         String name,
+                                         Color color)
             throws FigureException {
 
         final ApplicationContext<Line> lineApplicationContext = new LineApplicationContext();
@@ -44,65 +41,65 @@ class MainService {
 
         List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
         List<Point> twoPoints;
+        FigureCrud<Line> crud = new FigureCrud<>(new LineApplicationContext(), lineFactory, new LineStorage());
 
         for (int i = 0; i <= allPoints.size() - 2; i += 2) {
             twoPoints = allPoints.subList(i, i + 2);
-            lines.add(lineFactory.createFigure(twoPoints));
+            lines.add(crud.create(twoPoints, name, color));
         }
         return lines;
     }
 
-    public static List<Triangle> createTriangles(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws FigureException {
-
-        final ApplicationContext<Triangle> lineApplicationContext = new TriangleApplicationContext();
-        FigureFactory<Triangle> triangleFactory = lineApplicationContext.createFigureFactory(TriangleFactory.INSTANCE);
-        List<Triangle> triangles = new ArrayList<>();
-
-        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
-        List<Point> threePoints;
-
-        for (int i = 0; i <= allPoints.size() - 3; i += 3) {
-            threePoints = allPoints.subList(i, i + 3);
-            triangles.add(triangleFactory.createFigure(threePoints));
-        }
-        return triangles;
-    }
-
-    public static List<Square> createSquares(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws FigureException {
-
-        final ApplicationContext<Square> squareApplicationContext = new SquareApplicationContext();
-        final FigureFactory<Square> squareFactory =
-                squareApplicationContext.createFigureFactory(SquareFactory.INSTANCE);
-        List<Square> squares = new ArrayList<>();
-
-        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
-        List<Point> fourPoints;
-
-        for (int i = 0; i <= allPoints.size() - 4; i += 4) {
-            fourPoints = allPoints.subList(i, i + 4);
-            squares.add(squareFactory.createFigure(fourPoints));
-        }
-        return squares;
-    }
-
-    public static List<MultiAngleFigure> createMultiAngleFigures(List<Integer> xCoordinates, List<Integer> yCoordinates)
-            throws FigureException {
-
-        final ApplicationContext<MultiAngleFigure> multiAngleApplicationContext = new MultiAngleApplicationContext();
-        final FigureFactory<MultiAngleFigure> multiAngleFactory =
-                multiAngleApplicationContext.createFigureFactory(MultiAngleFigureFactory.INSTANCE);
-        List<MultiAngleFigure> pentagons = new ArrayList<>();
-
-        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
-        List<Point> fivePoints;
-
-        for (int i = 0; i <= allPoints.size() - 5; i += 5) {
-            fivePoints = allPoints.subList(i, i + 5);
-            pentagons.add(multiAngleFactory.createFigure(fivePoints));
-        }
-
-        return pentagons;
-    }
+//    public static List<Optional<Triangle>> createTriangles(List<Integer> xCoordinates, List<Integer> yCoordinates)
+//            throws FigureException {
+//
+//        final ApplicationContext<Triangle> lineApplicationContext = new TriangleApplicationContext();
+//        FigureFactory<Triangle> triangleFactory = lineApplicationContext.createFigureFactory(TriangleFactory.INSTANCE);
+//        List<Optional<Triangle>> triangles = new ArrayList<>();
+//
+//        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
+//        List<Point> threePoints;
+//
+//        for (int i = 0; i <= allPoints.size() - 3; i += 3) {
+//            threePoints = allPoints.subList(i, i + 3);
+//            triangles.add(triangleFactory.createFigure(threePoints));
+//        }
+//        return triangles;
+//    }
+//
+//    public static List<Optional<Square>> createSquares(List<Integer> xCoordinates, List<Integer> yCoordinates)
+//            throws FigureException {
+//
+//        final ApplicationContext<Square> squareApplicationContext = new SquareApplicationContext();
+//        final FigureFactory<Square> squareFactory =
+//                squareApplicationContext.createFigureFactory(SquareFactory.INSTANCE);
+//        List<Optional<Square>> squares = new ArrayList<>();
+//
+//        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
+//        List<Point> fourPoints;
+//
+//        for (int i = 0; i <= allPoints.size() - 4; i += 4) {
+//            fourPoints = allPoints.subList(i, i + 4);
+//            squares.add(squareFactory.createFigure(fourPoints));
+//        }
+//        return squares;
+//    }
+//
+//    public static List<Optional<MultiAngleFigure>> createMultiAngleFigures(List<Integer> xCoordinates, List<Integer> yCoordinates)
+//            throws FigureException {
+//
+//        final ApplicationContext<MultiAngleFigure> multiAngleApplicationContext = new MultiAngleApplicationContext();
+//        final FigureFactory<MultiAngleFigure> multiAngleFactory =
+//                multiAngleApplicationContext.createFigureFactory(MultiAngleFigureFactory.INSTANCE);
+//        List<Optional<MultiAngleFigure>> pentagons = new ArrayList<>();
+//
+//        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
+//        List<Point> fivePoints;
+//
+//        for (int i = 0; i <= allPoints.size() - 5; i += 5) {
+//            fivePoints = allPoints.subList(i, i + 5);
+//            pentagons.add(multiAngleFactory.createFigure(fivePoints));
+//        }
+//        return pentagons;
+//    }
 }
