@@ -140,31 +140,31 @@ public class Specification {
             checkedCriteria.add(this.name.equals(figure.getName()));
         }
         if (isCheckedGreaterArea) {
-            if (figure.getClass() == Triangle.class) {
+            if (figure instanceof Triangle) {
                 double area = TriangleCalculator.INSTANCE.calculateArea((Triangle) figure);
                 checkedCriteria.add(this.greaterArea < area);
             }
-            if (figure.getClass() == Square.class) {
+            if (figure instanceof Square) {
                 double area = SquareCalculator.INSTANCE.calculateArea((Square) figure);
                 checkedCriteria.add(this.greaterArea < area);
             }
         }
         if (isCheckedLessArea) {
-            if (figure.getClass() == Triangle.class) {
+            if (figure instanceof Triangle) {
                 double area = TriangleCalculator.INSTANCE.calculateArea((Triangle) figure);
                 checkedCriteria.add(this.lessArea > area);
             }
-            if (figure.getClass() == Square.class) {
+            if (figure instanceof Square) {
                 double area = SquareCalculator.INSTANCE.calculateArea((Square) figure);
                 checkedCriteria.add(this.lessArea > area);
             }
         }
         if (isCheckedGreaterPerimeter) {
-            if (figure.getClass() == Triangle.class) {
+            if (figure instanceof Triangle) {
                 double perimeter = TriangleCalculator.INSTANCE.calculatePerimeter((Triangle) figure);
                 checkedCriteria.add(this.greaterPerimeter < perimeter);
             }
-            if (figure.getClass() == Square.class) {
+            if (figure instanceof Square) {
                 double perimeter = SquareCalculator.INSTANCE.calculatePerimeter((Square) figure);
                 checkedCriteria.add(this.greaterPerimeter < perimeter);
             }

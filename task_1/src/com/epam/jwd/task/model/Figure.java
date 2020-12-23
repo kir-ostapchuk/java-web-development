@@ -1,5 +1,6 @@
 package com.epam.jwd.task.model;
 
+import java.util.List;
 import java.util.UUID;
 
 public abstract class Figure {
@@ -25,4 +26,6 @@ public abstract class Figure {
     public Color getColor() {
         return color;
     }
+
+    public abstract List<Point> getPoints();
 }
