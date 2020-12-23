@@ -9,7 +9,6 @@ import com.epam.jwd.task.model.factories.impl.line.Line;
 import com.epam.jwd.task.model.factories.impl.line.LineFactory;
 import com.epam.jwd.task.service.FigureCrud;
 import com.epam.jwd.task.model.Color;
-import com.epam.jwd.task.storage.impl.LineStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,36 +18,36 @@ class MainService {
         throw new AssertionError();
     }
 
-    public static List<Point> createPoints(List<Integer> xCoordinates, List<Integer> yCoordinates) {
-
-        List<Point> points = new ArrayList<>();
-        for (int i = 0; i < xCoordinates.size(); i++) {
-            points.add(new Point(xCoordinates.get(i), yCoordinates.get(i)));
-        }
-        return points;
-    }
-
-    public static List<Line> createLines(List<Integer> xCoordinates,
-                                         List<Integer> yCoordinates,
-                                         String name,
-                                         Color color)
-            throws FigureException {
-
-        final ApplicationContext<Line> lineApplicationContext = new LineApplicationContext();
-        final FigureFactory<Line> lineFactory =
-                lineApplicationContext.createFigureFactory(LineFactory.INSTANCE);
-        List<Line> lines = new ArrayList<>();
-
-        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
-        List<Point> twoPoints;
-        FigureCrud<Line> crud = new FigureCrud<>(new LineApplicationContext(), lineFactory, new LineStorage());
-
-        for (int i = 0; i <= allPoints.size() - 2; i += 2) {
-            twoPoints = allPoints.subList(i, i + 2);
-            lines.add(crud.create(twoPoints, name, color));
-        }
-        return lines;
-    }
+//    public static List<Point> createPoints(List<Integer> xCoordinates, List<Integer> yCoordinates) {
+//
+//        List<Point> points = new ArrayList<>();
+//        for (int i = 0; i < xCoordinates.size(); i++) {
+//            points.add(new Point(xCoordinates.get(i), yCoordinates.get(i)));
+//        }
+//        return points;
+//    }
+//
+//    public static List<Line> createLines(List<Integer> xCoordinates,
+//                                         List<Integer> yCoordinates,
+//                                         String name,
+//                                         Color color)
+//            throws FigureException {
+//
+//        final ApplicationContext<Line> lineApplicationContext = new LineApplicationContext();
+//        final FigureFactory<Line> lineFactory =
+//                lineApplicationContext.createFigureFactory(LineFactory.INSTANCE);
+//        List<Line> lines = new ArrayList<>();
+//
+//        List<Point> allPoints = createPoints(xCoordinates, yCoordinates);
+//        List<Point> twoPoints;
+//        FigureCrud<Line> crud = new FigureCrud<>(new LineApplicationContext(), lineFactory, new LineStorage());
+//
+//        for (int i = 0; i <= allPoints.size() - 2; i += 2) {
+//            twoPoints = allPoints.subList(i, i + 2);
+//            lines.add(crud.create(twoPoints, name, color));
+//        }
+//        return lines;
+//    }
 
 //    public static List<Optional<Triangle>> createTriangles(List<Integer> xCoordinates, List<Integer> yCoordinates)
 //            throws FigureException {

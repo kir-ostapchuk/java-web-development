@@ -3,7 +3,6 @@ package com.epam.jwd.task.model.factories.impl.triangle;
 import com.epam.jwd.task.model.factories.FigureFactory;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.Color;
-import com.epam.jwd.task.storage.impl.TriangleStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,7 +18,7 @@ public enum TriangleFactory implements FigureFactory<Triangle> {
     public Triangle createFigure(List<Point> points, String name, Color color) {
 
         Triangle triangle = new Triangle(points, name, color);
-        TriangleStorage.triangleStorage.add(triangle);
+//        TriangleStorage.triangleStorage.add(triangle);
         LOGGER.info(triangle.toString() + " was created");
         return triangle;
     }

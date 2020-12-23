@@ -4,6 +4,7 @@ import com.epam.jwd.task.context.impl.LineApplicationContext;
 import com.epam.jwd.task.context.impl.SquareApplicationContext;
 import com.epam.jwd.task.context.impl.TriangleApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
+import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.factories.impl.line.Line;
 import com.epam.jwd.task.model.factories.impl.line.LineFactory;
@@ -14,9 +15,7 @@ import com.epam.jwd.task.model.factories.impl.triangle.TriangleFactory;
 import com.epam.jwd.task.service.FigureCrud;
 import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.specification.Specification;
-import com.epam.jwd.task.storage.impl.LineStorage;
-import com.epam.jwd.task.storage.impl.SquareStorage;
-import com.epam.jwd.task.storage.impl.TriangleStorage;
+import com.epam.jwd.task.storage.SquareStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,13 +46,12 @@ public class Main {
             FigureCrud<Square> squareFigureCrud = new FigureCrud<>(new SquareApplicationContext(),
                     SquareFactory.INSTANCE,
                     new SquareStorage());
-            squareFigureCrud.create(Arrays.asList(new Point(1, 2),
-                    new Point(-1, 2),
-                    new Point(-1, -2),
-                    new Point(1, -2)),
-                    "BestSquare",
-                    Color.BLUE);
 
+
+            squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
+                    "Test",
+                    Color.BLUE);
+            System.out.println("debug stopper");
         } catch (FigureException exception) {
             LOGGER.error(exception.getMessage());
         }

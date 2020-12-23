@@ -18,6 +18,7 @@ public enum MultiAngleFigureFactory implements FigureFactory<MultiAngleFigure> {
     public MultiAngleFigure createFigure(List<Point> points, String name, Color color) {
         MultiAngleFigure multiAngleFigure = new MultiAngleFigure(points, name, color);
         LOGGER.info(multiAngleFigure.toString() + " was created");
+        //        TriangleStorage.triangleStorage.add(triangle);
         return multiAngleFigure;
     }
 }
