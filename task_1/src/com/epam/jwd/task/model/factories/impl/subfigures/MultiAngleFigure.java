@@ -4,7 +4,7 @@ import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.Color;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +27,7 @@ public final class MultiAngleFigure extends Figure {
     }
 
     public List<Point> getPoints() {
-        return new ArrayList<>(points);
+        return Collections.unmodifiableList(points);
     }
 
     @Override
