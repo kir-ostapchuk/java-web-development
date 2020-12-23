@@ -49,8 +49,16 @@ public class Main {
 
 
             squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
-                    "Test",
+                    "Test1",
                     Color.BLUE);
+            squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
+                    "Test2",
+                    Color.BLACK);
+            squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
+                    "Test3",
+                    Color.BROWN);
+            Specification specification = Specification.builder().whereColor(Color.BROWN).build();
+            System.out.println(squareFigureCrud.findBySpecification(specification).toString());
             System.out.println("debug stopper");
         } catch (FigureException exception) {
             LOGGER.error(exception.getMessage());

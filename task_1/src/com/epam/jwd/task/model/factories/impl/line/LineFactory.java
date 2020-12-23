@@ -3,6 +3,7 @@ package com.epam.jwd.task.model.factories.impl.line;
 import com.epam.jwd.task.model.factories.FigureFactory;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.storage.LineStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +18,7 @@ public enum LineFactory implements FigureFactory<Line> {
     @Override
     public Line createFigure(List<Point> points, String name, Color color) {
         Line line = new Line(points, name, color);
-//        LineStorage.linesStorage.add(line);
+        LineStorage.lineStorage.add(line);
         LOGGER.info(line.toString() + " was created");
         return line;
     }

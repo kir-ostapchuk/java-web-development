@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public enum SquareCalculator implements AreaCalculator<Square>, PerimeterCalculator<Square> {
+
     INSTANCE;
 
     @Override
