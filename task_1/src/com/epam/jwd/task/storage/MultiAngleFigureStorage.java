@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class MultiAngleFigureStorage extends FigureStorage<MultiAngleFigure> {
+
     public static List<MultiAngleFigure> multiAngleFigureStorage = new ArrayList<>();
 
     public MultiAngleFigureStorage() {

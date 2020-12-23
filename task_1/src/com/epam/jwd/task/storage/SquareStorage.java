@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class SquareStorage extends FigureStorage<Square> {
+
     public static List<Square> squareStorage = new ArrayList<>();
 
     public SquareStorage() {
