@@ -1,9 +1,9 @@
-package com.epam.jwd.task.model.factories;
+package com.epam.jwd.task.view.factories;
 
 import com.epam.jwd.task.exception.FigureException;
-import com.epam.jwd.task.model.Figure;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.view.Figure;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.Color;
 
 import java.util.List;
 

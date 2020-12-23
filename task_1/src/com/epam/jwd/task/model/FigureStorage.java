@@ -1,6 +1,6 @@
-package com.epam.jwd.task.storage;
+package com.epam.jwd.task.model;
 
-import com.epam.jwd.task.model.Figure;
+import com.epam.jwd.task.view.Figure;
 import com.epam.jwd.task.specification.Specification;
 
 import java.util.List;

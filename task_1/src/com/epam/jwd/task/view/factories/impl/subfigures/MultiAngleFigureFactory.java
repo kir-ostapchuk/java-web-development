@@ -1,9 +1,9 @@
-package com.epam.jwd.task.model.factories.impl.subfigures;
+package com.epam.jwd.task.view.factories.impl.subfigures;
 
-import com.epam.jwd.task.model.factories.FigureFactory;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.Color;
-import com.epam.jwd.task.storage.MultiAngleFigureStorage;
+import com.epam.jwd.task.view.factories.FigureFactory;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.Color;
+import com.epam.jwd.task.model.MultiAngleFigureStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package com.epam.jwd.task.model;
+package com.epam.jwd.task.view;
 
 public enum Color {
     RED,

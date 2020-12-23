@@ -1,9 +1,9 @@
-package com.epam.jwd.task.model.factories.impl.triangle;
+package com.epam.jwd.task.view.factories.impl.triangle;
 
-import com.epam.jwd.task.model.factories.FigureFactory;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.Color;
-import com.epam.jwd.task.storage.TriangleStorage;
+import com.epam.jwd.task.view.factories.FigureFactory;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.Color;
+import com.epam.jwd.task.model.TriangleStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

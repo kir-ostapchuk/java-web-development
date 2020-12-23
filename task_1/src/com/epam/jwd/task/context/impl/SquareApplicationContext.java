@@ -2,8 +2,8 @@ package com.epam.jwd.task.context.impl;
 
 import com.epam.jwd.task.context.ApplicationContext;
 import com.epam.jwd.task.decorators.impl.SquarePreProcessingDecorator;
-import com.epam.jwd.task.model.factories.FigureFactory;
-import com.epam.jwd.task.model.factories.impl.square.Square;
+import com.epam.jwd.task.view.factories.FigureFactory;
+import com.epam.jwd.task.view.factories.impl.square.Square;
 
 public class SquareApplicationContext implements ApplicationContext<Square> {
     @Override

@@ -1,8 +1,8 @@
-package com.epam.jwd.task.model.factories.impl.triangle;
+package com.epam.jwd.task.view.factories.impl.triangle;
 
-import com.epam.jwd.task.model.Figure;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.view.Figure;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.Color;
 
 import java.util.Collections;
 import java.util.List;

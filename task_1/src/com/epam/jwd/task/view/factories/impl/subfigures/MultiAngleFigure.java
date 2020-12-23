@@ -1,8 +1,8 @@
-package com.epam.jwd.task.model.factories.impl.subfigures;
+package com.epam.jwd.task.view.factories.impl.subfigures;
 
-import com.epam.jwd.task.model.Figure;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.view.Figure;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.Color;
 
 import java.util.Collections;
 import java.util.HashSet;

@@ -2,8 +2,8 @@ package com.epam.jwd.task.preprocessors.impl;
 
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.factories.impl.triangle.TriangleFactory;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.factories.impl.triangle.TriangleFactory;
 import com.epam.jwd.task.preprocessors.ExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

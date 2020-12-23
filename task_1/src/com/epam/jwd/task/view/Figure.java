@@ -1,4 +1,4 @@
-package com.epam.jwd.task.model;
+package com.epam.jwd.task.view;
 
 import java.util.List;
 import java.util.UUID;

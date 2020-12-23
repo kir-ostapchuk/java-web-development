@@ -1,4 +1,4 @@
-package com.epam.jwd.task.model;
+package com.epam.jwd.task.view;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

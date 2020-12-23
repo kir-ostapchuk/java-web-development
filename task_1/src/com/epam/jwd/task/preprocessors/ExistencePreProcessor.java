@@ -1,7 +1,7 @@
 package com.epam.jwd.task.preprocessors;
 
 import com.epam.jwd.task.exception.FigureException;
-import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.view.Point;
 
 import java.util.List;
 

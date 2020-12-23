@@ -1,12 +1,11 @@
 package com.epam.jwd.task.decorators;
 
-import com.epam.jwd.task.model.factories.impl.square.SquareFactory;
 import com.epam.jwd.task.preprocessors.ExistencePreProcessor;
 import com.epam.jwd.task.exception.FigureException;
-import com.epam.jwd.task.model.Figure;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.factories.FigureFactory;
-import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.view.Figure;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.factories.FigureFactory;
+import com.epam.jwd.task.view.Color;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

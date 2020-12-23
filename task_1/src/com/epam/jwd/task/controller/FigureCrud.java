@@ -1,15 +1,15 @@
-package com.epam.jwd.task.manager;
+package com.epam.jwd.task.controller;
 
 import com.epam.jwd.task.context.ApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
-import com.epam.jwd.task.model.Figure;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.factories.FigureFactory;
-import com.epam.jwd.task.model.Color;
-import com.epam.jwd.task.model.factories.impl.line.LineFactory;
+import com.epam.jwd.task.view.Figure;
+import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.view.factories.FigureFactory;
+import com.epam.jwd.task.view.Color;
+import com.epam.jwd.task.view.factories.impl.line.LineFactory;
 import com.epam.jwd.task.specification.Specification;
-import com.epam.jwd.task.storage.FigureStorage;
+import com.epam.jwd.task.model.FigureStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
