@@ -1,18 +1,5 @@
 package com.epam.jwd.task.app;
 
-import com.epam.jwd.task.context.ApplicationContext;
-import com.epam.jwd.task.context.impl.LineApplicationContext;
-import com.epam.jwd.task.exception.FigureException;
-import com.epam.jwd.task.model.factories.FigureFactory;
-import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.factories.impl.line.Line;
-import com.epam.jwd.task.model.factories.impl.line.LineFactory;
-import com.epam.jwd.task.service.FigureCrud;
-import com.epam.jwd.task.model.Color;
-
-import java.util.ArrayList;
-import java.util.List;
-
 class MainService {
     private MainService() {
         throw new AssertionError();

@@ -1,4 +1,4 @@
-package com.epam.jwd.task.service;
+package com.epam.jwd.task.manager;
 
 import com.epam.jwd.task.context.ApplicationContext;
 import com.epam.jwd.task.exception.FigureException;

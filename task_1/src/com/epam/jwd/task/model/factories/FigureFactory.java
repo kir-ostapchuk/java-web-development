@@ -7,6 +7,7 @@ import com.epam.jwd.task.model.Color;
 
 import java.util.List;
 
+@FunctionalInterface
 public interface FigureFactory<T extends Figure> {
     T createFigure(List<Point> points, String name, Color color) throws FigureException;
 }

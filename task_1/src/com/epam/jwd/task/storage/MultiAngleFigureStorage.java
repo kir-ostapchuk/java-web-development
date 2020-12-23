@@ -5,7 +5,7 @@ import com.epam.jwd.task.model.factories.impl.subfigures.MultiAngleFigure;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiAngleFigureStorage extends FigureStorage<MultiAngleFigure> {
+public final class MultiAngleFigureStorage extends FigureStorage<MultiAngleFigure> {
     public static List<MultiAngleFigure> multiAngleFigureStorage = new ArrayList<>();
 
     public MultiAngleFigureStorage() {

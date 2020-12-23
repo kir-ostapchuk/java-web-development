@@ -1,18 +1,11 @@
 package com.epam.jwd.task.app;
 
-import com.epam.jwd.task.context.impl.LineApplicationContext;
 import com.epam.jwd.task.context.impl.SquareApplicationContext;
-import com.epam.jwd.task.context.impl.TriangleApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
-import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.factories.impl.line.Line;
-import com.epam.jwd.task.model.factories.impl.line.LineFactory;
 import com.epam.jwd.task.model.factories.impl.square.Square;
 import com.epam.jwd.task.model.factories.impl.square.SquareFactory;
-import com.epam.jwd.task.model.factories.impl.triangle.Triangle;
-import com.epam.jwd.task.model.factories.impl.triangle.TriangleFactory;
-import com.epam.jwd.task.service.FigureCrud;
+import com.epam.jwd.task.manager.FigureCrud;
 import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.specification.Specification;
 import com.epam.jwd.task.storage.SquareStorage;

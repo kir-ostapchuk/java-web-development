@@ -6,6 +6,7 @@ import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.factories.impl.square.Square;
 import com.epam.jwd.task.model.factories.impl.triangle.Triangle;
+import com.epam.jwd.task.manager.impl.TriangleService;
 
 import java.util.ArrayList;
 import java.util.List;
