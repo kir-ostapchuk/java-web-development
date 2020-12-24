@@ -1,9 +1,9 @@
-package com.epam.jwd.task.view.factory.impl.square;
+package com.epam.jwd.task.model.factory.impl.square;
 
-import com.epam.jwd.task.view.factory.FigureFactory;
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.Color;
-import com.epam.jwd.task.model.SquareStorage;
+import com.epam.jwd.task.model.factory.FigureFactory;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.storage.SquareStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

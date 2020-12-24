@@ -1,7 +1,7 @@
 package com.epam.jwd.task.calculation.impl;
 
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.factory.impl.square.Square;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.factory.impl.square.Square;
 import com.epam.jwd.task.calculation.AreaCalculator;
 import com.epam.jwd.task.calculation.PerimeterCalculator;
 

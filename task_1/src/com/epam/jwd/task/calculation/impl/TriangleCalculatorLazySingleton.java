@@ -1,7 +1,7 @@
 package com.epam.jwd.task.calculation.impl;
 
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.factory.impl.triangle.Triangle;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.factory.impl.triangle.Triangle;
 import com.epam.jwd.task.calculation.AreaCalculator;
 import com.epam.jwd.task.calculation.PerimeterCalculator;
 
@@ -29,6 +29,8 @@ public final class TriangleCalculatorLazySingleton implements AreaCalculator<Tri
         return  Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 
+
+    // todo: move to more general class
     private static double calculateSide(Point point1, Point point2) {
         return Math.hypot(
                 point1.getX() - point2.getX(),

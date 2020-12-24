@@ -1,11 +1,12 @@
-package com.epam.jwd.task.model;
+package com.epam.jwd.task.storage;
 
-import com.epam.jwd.task.view.Figure;
+import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.specification.Specification;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class FigureStorage<T extends Figure> {
@@ -35,6 +36,12 @@ public class FigureStorage<T extends Figure> {
     public List<T> findBySpecification(Specification specification) {
         return figureStorage.stream()
                 .filter(specification::matches)
+                .collect(Collectors.toList());
+    }
+
+    public List<T> findBy(Predicate<T> p) {
+        return figureStorage.stream()
+                .filter(p)
                 .collect(Collectors.toList());
     }
 }

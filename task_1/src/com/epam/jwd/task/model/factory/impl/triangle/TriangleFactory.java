@@ -1,9 +1,9 @@
-package com.epam.jwd.task.view.factory.impl.triangle;
+package com.epam.jwd.task.model.factory.impl.triangle;
 
-import com.epam.jwd.task.view.factory.FigureFactory;
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.Color;
-import com.epam.jwd.task.model.TriangleStorage;
+import com.epam.jwd.task.model.factory.FigureFactory;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.storage.TriangleStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +17,6 @@ public enum TriangleFactory implements FigureFactory<Triangle> {
 
     @Override
     public Triangle createFigure(List<Point> points, String name, Color color) {
-
         Triangle triangle = new Triangle(points, name, color);
         TriangleStorage.triangleStorage.add(triangle);
         LOGGER.info(triangle.toString() + " was created");

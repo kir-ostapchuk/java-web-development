@@ -1,14 +1,18 @@
 package com.epam.jwd.task.app;
 
+import com.epam.jwd.task.context.impl.LineApplicationContext;
 import com.epam.jwd.task.context.impl.SquareApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.factory.impl.square.Square;
-import com.epam.jwd.task.view.factory.impl.square.SquareFactory;
-import com.epam.jwd.task.controller.FigureCrud;
-import com.epam.jwd.task.view.Color;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.factory.impl.line.Line;
+import com.epam.jwd.task.model.factory.impl.line.LineFactory;
+import com.epam.jwd.task.model.factory.impl.square.Square;
+import com.epam.jwd.task.model.factory.impl.square.SquareFactory;
+import com.epam.jwd.task.crud.FigureCrud;
+import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.specification.Specification;
-import com.epam.jwd.task.model.SquareStorage;
+import com.epam.jwd.task.storage.LineStorage;
+import com.epam.jwd.task.storage.SquareStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +20,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+
+    // todo: 1. redo specification
+    // 2. redo calculation
+    // 3. add preprocessor for checking amount of points in lists
+    // 4. add calculateSide to another class
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
@@ -53,6 +62,16 @@ public class Main {
             Specification specification = Specification.builder().whereColor(Color.BROWN).build();
             System.out.println(squareFigureCrud.findBySpecification(specification).toString());
             System.out.println("debug stopper");
+
+            FigureCrud<Line> lineFigureCrud = new FigureCrud<>(new LineApplicationContext(),
+                    LineFactory.INSTANCE,
+                    new LineStorage());
+
+            Line line = lineFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2)),
+                    "Test1",
+                    Color.BLUE);
+            System.out.println(line.toString());
+
         } catch (FigureException exception) {
             LOGGER.error(exception.getMessage());
         }

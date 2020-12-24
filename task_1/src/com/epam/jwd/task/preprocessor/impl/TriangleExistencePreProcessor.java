@@ -2,19 +2,14 @@ package com.epam.jwd.task.preprocessor.impl;
 
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.factory.impl.triangle.TriangleFactory;
+import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.preprocessor.ExistencePreProcessor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class TriangleExistencePreProcessor implements ExistencePreProcessor {
-
-    private static final Logger LOGGER = LogManager.getLogger(TriangleFactory.class);
 
     @Override
     public void preProcess(List<Point> points) throws FigureException {

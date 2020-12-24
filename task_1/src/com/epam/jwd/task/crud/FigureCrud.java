@@ -1,21 +1,22 @@
-package com.epam.jwd.task.controller;
+package com.epam.jwd.task.crud;
 
 import com.epam.jwd.task.context.ApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
-import com.epam.jwd.task.view.Figure;
-import com.epam.jwd.task.view.Point;
-import com.epam.jwd.task.view.factory.FigureFactory;
-import com.epam.jwd.task.view.Color;
-import com.epam.jwd.task.view.factory.impl.line.LineFactory;
+import com.epam.jwd.task.model.Figure;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.factory.FigureFactory;
+import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.model.factory.impl.line.LineFactory;
 import com.epam.jwd.task.specification.Specification;
-import com.epam.jwd.task.model.FigureStorage;
+import com.epam.jwd.task.storage.FigureStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.function.Predicate;
 
 public class FigureCrud<T extends Figure> {
 
@@ -45,19 +46,21 @@ public class FigureCrud<T extends Figure> {
     }
 
     public boolean removeAll(T figure) {
-        if (storage.removeAll(figure)) {
+        boolean isRemoved = storage.removeAll(figure);
+        if (isRemoved) {
             LOGGER.info("Figures were removed");
         }
-        return storage.removeAll(figure);
+        return isRemoved;
     }
 
     public List<T> find(T figure) {
-        if (storage.find(figure).isEmpty()) {
+        List<T> foundFigures = storage.find(figure);
+        if (foundFigures.isEmpty()) {
             LOGGER.info("No figures were found");
         } else {
-            LOGGER.info("Were found: " + storage.find(figure).size() + " figures");
+            LOGGER.info("Were found: " + foundFigures.size() + " figures");
         }
-        return storage.find(figure);
+        return foundFigures;
     }
 
     public T findById(UUID id) throws FigureNotExistException {
@@ -72,5 +75,9 @@ public class FigureCrud<T extends Figure> {
             LOGGER.info("Were found: " + storage.findBySpecification(specification).size() + " figures");
         }
         return storage.findBySpecification(specification);
+    }
+
+    public List<T> findBy(Predicate<T> p) {
+        return storage.findBy(p);
     }
 }

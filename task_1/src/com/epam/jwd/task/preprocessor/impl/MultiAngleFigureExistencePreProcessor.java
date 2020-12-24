@@ -2,7 +2,7 @@ package com.epam.jwd.task.preprocessor.impl;
 
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
-import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.preprocessor.ExistencePreProcessor;
 
 import java.util.HashSet;

@@ -2,7 +2,7 @@ package com.epam.jwd.task.preprocessor.impl;
 
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
-import com.epam.jwd.task.view.Point;
+import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.preprocessor.ExistencePreProcessor;
 
 import java.util.HashSet;
@@ -38,26 +38,30 @@ public class SquareExistencePreProcessor implements ExistencePreProcessor {
         Point p3 = points.get(2);
         Point p4 = points.get(3);
 
-        int d2 = Point.squareDis(p1, p2);
-        int d3 = Point.squareDis(p1, p3);
-        int d4 = Point.squareDis(p1, p4);
+        int d2 = squareDistance(p1, p2);
+        int d3 = squareDistance(p1, p3);
+        int d4 = squareDistance(p1, p4);
 
         if (d2 == 0 || d3 == 0 || d4 == 0) {
             return false;
         }
         if (d2 == d3 && 2 * d2 == d4 &&
-                (2 * Point.squareDis(p2, p4) == Point.squareDis(p2, p3))) {
+                (2 * squareDistance(p2, p4) == squareDistance(p2, p3))) {
             return true;
         }
         if (d3 == d4 && 2 * d3 == d2 &&
-                (2 * Point.squareDis(p3, p2) == Point.squareDis(p3, p4))) {
+                (2 * squareDistance(p3, p2) == squareDistance(p3, p4))) {
             return true;
         }
         if (d2 == d4 && 2 * d2 == d3 &&
-                (2 * Point.squareDis(p2, p3) == Point.squareDis(p2, p4))) {
+                (2 * squareDistance(p2, p3) == squareDistance(p2, p4))) {
             return true;
         }
         return false;
+    }
+
+    private int squareDistance(Point p1, Point p2) {
+        return (p1.getX() - p2.getX()) * (p1.getX() - p2.getX()) + (p1.getY() - p2.getY()) * (p1.getY() - p2.getY());
     }
 
 }

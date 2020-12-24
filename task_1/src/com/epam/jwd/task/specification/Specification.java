@@ -2,10 +2,10 @@ package com.epam.jwd.task.specification;
 
 import com.epam.jwd.task.calculation.impl.SquareCalculator;
 import com.epam.jwd.task.calculation.impl.TriangleCalculator;
-import com.epam.jwd.task.view.Color;
-import com.epam.jwd.task.view.Figure;
-import com.epam.jwd.task.view.factory.impl.square.Square;
-import com.epam.jwd.task.view.factory.impl.triangle.Triangle;
+import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.model.Figure;
+import com.epam.jwd.task.model.factory.impl.square.Square;
+import com.epam.jwd.task.model.factory.impl.triangle.Triangle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,30 +15,16 @@ public class Specification {
     private final String name;
     private final String startName;
     private final Color color;
-    private final double greaterArea;
-    private final double lessArea;
-    private final int greaterPerimeter;
-
-    private final boolean isCheckedName;
-    private final boolean isCheckedStartName;
-    private final boolean isCheckedColor;
-    private final boolean isCheckedGreaterArea;
-    private final boolean isCheckedLessArea;
-    private final boolean isCheckedGreaterPerimeter;
+    private final Double greaterArea;
+    private final Double lessArea;
+    private final Integer greaterPerimeter;
 
     private Specification(String name,
                           String startName,
                           Color color,
-                          double greaterArea,
-                          double lessArea,
-                          int greaterPerimeter,
-
-                          boolean isCheckedName,
-                          boolean isCheckedStartName,
-                          boolean isCheckedColor,
-                          boolean isCheckedGreaterArea,
-                          boolean isCheckedLessArea,
-                          boolean isCheckedGreaterPerimeter) {
+                          Double greaterArea,
+                          Double lessArea,
+                          Integer greaterPerimeter) {
 
         this.name = name;
         this.startName = startName;
@@ -46,13 +32,6 @@ public class Specification {
         this.greaterArea = greaterArea;
         this.lessArea = lessArea;
         this.greaterPerimeter = greaterPerimeter;
-
-        this.isCheckedName = isCheckedName;
-        this.isCheckedStartName = isCheckedStartName;
-        this.isCheckedColor = isCheckedColor;
-        this.isCheckedGreaterArea = isCheckedGreaterArea;
-        this.isCheckedLessArea = isCheckedLessArea;
-        this.isCheckedGreaterPerimeter = isCheckedGreaterPerimeter;
     }
 
     public static class Builder {
@@ -60,49 +39,36 @@ public class Specification {
         private String name;
         private String startName;
         private Color color;
-        private double greaterArea;
-        private double lessArea;
-        private int greaterPerimeter;
-
-        private boolean isCheckedName = false;
-        private boolean isCheckedStartName = false;
-        private boolean isCheckedColor = false;
-        private boolean isCheckedGreaterArea = false;
-        private boolean isCheckedLessArea = false;
-        private boolean isCheckedGreaterPerimeter = false;
+        private Double greaterArea;
+        private Double lessArea;
+        private Integer greaterPerimeter;
 
         public Builder whereName(String name) {
-            isCheckedName = true;
             this.name = name;
             return this;
         }
 
         public Builder whereNameStartsWith(String startName) {
-            isCheckedStartName = true;
             this.startName = startName;
             return this;
         }
 
         public Builder whereColor(Color color) {
-            isCheckedColor = true;
             this.color = color;
             return this;
         }
 
-        public Builder whereAreaGreater(double area) {
-            isCheckedGreaterArea = true;
+        public Builder whereAreaGreater(Double area) {
             this.greaterArea = area;
             return this;
         }
 
-        public Builder whereAreaLessThan(double area) {
-            isCheckedLessArea = true;
+        public Builder whereAreaLessThan(Double area) {
             this.lessArea = area;
             return this;
         }
 
-        public Builder wherePerimeterGreater(int perimeter) {
-            isCheckedGreaterPerimeter = true;
+        public Builder wherePerimeterGreater(Integer perimeter) {
             this.greaterPerimeter = perimeter;
             return this;
         }
@@ -113,14 +79,7 @@ public class Specification {
                     color,
                     greaterArea,
                     lessArea,
-                    greaterPerimeter,
-
-                    isCheckedName,
-                    isCheckedStartName,
-                    isCheckedColor,
-                    isCheckedGreaterArea,
-                    isCheckedLessArea,
-                    isCheckedGreaterPerimeter);
+                    greaterPerimeter);
         }
     }
 
@@ -130,16 +89,16 @@ public class Specification {
 
     public boolean matches(Figure figure) {
         List<Boolean> checkedCriteria = new ArrayList<>();
-        if (isCheckedColor) {
+        if (color != null) {
             checkedCriteria.add(this.color.equals(figure.getColor()));
         }
-        if (isCheckedStartName) {
+        if (startName != null) {
             checkedCriteria.add(figure.getName().startsWith(startName));
         }
-        if (isCheckedName) {
+        if (name != null) {
             checkedCriteria.add(this.name.equals(figure.getName()));
         }
-        if (isCheckedGreaterArea) {
+        if (greaterArea != null) {
             if (figure instanceof Triangle) {
                 double area = TriangleCalculator.INSTANCE.calculateArea((Triangle) figure);
                 checkedCriteria.add(this.greaterArea < area);
@@ -149,7 +108,7 @@ public class Specification {
                 checkedCriteria.add(this.greaterArea < area);
             }
         }
-        if (isCheckedLessArea) {
+        if (lessArea != null) {
             if (figure instanceof Triangle) {
                 double area = TriangleCalculator.INSTANCE.calculateArea((Triangle) figure);
                 checkedCriteria.add(this.lessArea > area);
@@ -159,7 +118,7 @@ public class Specification {
                 checkedCriteria.add(this.lessArea > area);
             }
         }
-        if (isCheckedGreaterPerimeter) {
+        if (greaterPerimeter != null) {
             if (figure instanceof Triangle) {
                 double perimeter = TriangleCalculator.INSTANCE.calculatePerimeter((Triangle) figure);
                 checkedCriteria.add(this.greaterPerimeter < perimeter);

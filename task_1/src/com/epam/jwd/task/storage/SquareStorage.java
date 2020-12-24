@@ -1,6 +1,6 @@
-package com.epam.jwd.task.model;
+package com.epam.jwd.task.storage;
 
-import com.epam.jwd.task.view.factory.impl.square.Square;
+import com.epam.jwd.task.model.factory.impl.square.Square;
 
 import java.util.ArrayList;
 import java.util.List;
