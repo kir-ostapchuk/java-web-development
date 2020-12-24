@@ -1,6 +1,6 @@
 package com.epam.jwd.task.model;
 
-import com.epam.jwd.task.view.factories.impl.subfigures.MultiAngleFigure;
+import com.epam.jwd.task.view.factory.impl.subfigure.MultiAngleFigure;
 
 import java.util.ArrayList;
 import java.util.List;

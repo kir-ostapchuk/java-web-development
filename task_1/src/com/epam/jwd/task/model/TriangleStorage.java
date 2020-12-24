@@ -1,6 +1,6 @@
 package com.epam.jwd.task.model;
 
-import com.epam.jwd.task.view.factories.impl.triangle.Triangle;
+import com.epam.jwd.task.view.factory.impl.triangle.Triangle;
 
 import java.util.ArrayList;
 import java.util.List;

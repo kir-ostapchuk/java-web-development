@@ -1,6 +1,6 @@
 package com.epam.jwd.task.model;
 
-import com.epam.jwd.task.view.factories.impl.line.Line;
+import com.epam.jwd.task.view.factory.impl.line.Line;
 
 import java.util.ArrayList;
 import java.util.List;

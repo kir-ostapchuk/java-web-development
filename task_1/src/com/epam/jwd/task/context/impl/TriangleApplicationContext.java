@@ -1,9 +1,9 @@
 package com.epam.jwd.task.context.impl;
 
 import com.epam.jwd.task.context.ApplicationContext;
-import com.epam.jwd.task.decorators.impl.TrianglePreProcessingDecorator;
-import com.epam.jwd.task.view.factories.FigureFactory;
-import com.epam.jwd.task.view.factories.impl.triangle.Triangle;
+import com.epam.jwd.task.decorator.impl.TrianglePreProcessingDecorator;
+import com.epam.jwd.task.view.factory.FigureFactory;
+import com.epam.jwd.task.view.factory.impl.triangle.Triangle;
 
 public class TriangleApplicationContext implements ApplicationContext<Triangle> {
     @Override

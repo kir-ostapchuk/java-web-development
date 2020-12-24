@@ -1,11 +1,11 @@
 package com.epam.jwd.task.specification;
 
-import com.epam.jwd.task.calculations.impl.SquareCalculator;
-import com.epam.jwd.task.calculations.impl.TriangleCalculator;
+import com.epam.jwd.task.calculation.impl.SquareCalculator;
+import com.epam.jwd.task.calculation.impl.TriangleCalculator;
 import com.epam.jwd.task.view.Color;
 import com.epam.jwd.task.view.Figure;
-import com.epam.jwd.task.view.factories.impl.square.Square;
-import com.epam.jwd.task.view.factories.impl.triangle.Triangle;
+import com.epam.jwd.task.view.factory.impl.square.Square;
+import com.epam.jwd.task.view.factory.impl.triangle.Triangle;
 
 import java.util.ArrayList;
 import java.util.List;
