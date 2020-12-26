@@ -8,7 +8,7 @@ import com.epam.jwd.task.model.factory.impl.triangle.Triangle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TriangleSpecification  implements Specification {
+public class TriangleSpecification implements Specification {
 
     private final String name;
     private final String startName;
