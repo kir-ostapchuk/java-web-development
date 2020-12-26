@@ -9,7 +9,7 @@ import java.util.List;
 public final class Line extends Figure {
 
     Line(List<Point> points, String name, Color color) {
-        super(points, name, color);
+        super(points.subList(0, 2), name, color);
     }
 
     @Override

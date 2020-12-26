@@ -11,20 +11,17 @@ import com.epam.jwd.task.model.factory.impl.square.SquareFactory;
 import com.epam.jwd.task.crud.FigureCrud;
 import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.specification.Specification;
+import com.epam.jwd.task.specification.SquareSpecification;
 import com.epam.jwd.task.storage.LineStorage;
 import com.epam.jwd.task.storage.SquareStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
-
-    // todo: 1. redo specification
-    // 2. redo calculation
-    // 3. add preprocessor for checking amount of points in lists
-    // 4. add calculateSide to another class
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
@@ -49,7 +46,6 @@ public class Main {
                     SquareFactory.INSTANCE,
                     new SquareStorage());
 
-
             squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
                     "Test1",
                     Color.BLUE);
@@ -59,19 +55,17 @@ public class Main {
             squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
                     "Test3",
                     Color.BROWN);
-            Specification specification = Specification.builder().whereColor(Color.BROWN).build();
-            System.out.println(squareFigureCrud.findBySpecification(specification).toString());
-            System.out.println("debug stopper");
+            Specification specification = SquareSpecification.builder()
+                    .whereColor(Color.BROWN)
+                    .build();
 
             FigureCrud<Line> lineFigureCrud = new FigureCrud<>(new LineApplicationContext(),
                     LineFactory.INSTANCE,
                     new LineStorage());
 
-            Line line = lineFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2)),
+            Line line = lineFigureCrud.create(Collections.singletonList(new Point(1, 2)),
                     "Test1",
                     Color.BLUE);
-            System.out.println(line.toString());
-
         } catch (FigureException exception) {
             LOGGER.error(exception.getMessage());
         }

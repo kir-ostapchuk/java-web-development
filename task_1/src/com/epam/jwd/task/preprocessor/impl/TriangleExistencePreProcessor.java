@@ -14,13 +14,15 @@ public class TriangleExistencePreProcessor implements ExistencePreProcessor {
     @Override
     public void preProcess(List<Point> points) throws FigureException {
         Set<Point> compressPoints = new HashSet<>(points);
+        if (points.size() < 3) {
+            throw new FigureNotExistException("Triangle was NOT created. There are only " + points.size() + " points");
+        }
         if (compressPoints.size() != points.size()) {
             throw new FigureNotExistException("Triangle: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +
                     points.get(2).toString() + " was NOT created. There are equal points");
         }
-
         if (!isTriangle(points)) {
             throw new FigureNotExistException("Triangle: " +
                     points.get(0).toString() + ", " +

@@ -69,12 +69,13 @@ public class FigureCrud<T extends Figure> {
     }
 
     public List<T> findBySpecification(Specification specification) {
-        if (storage.findBySpecification(specification).isEmpty()) {
+        List<T> foundFigures = storage.findBySpecification(specification);
+        if (foundFigures.isEmpty()) {
             LOGGER.info("No figures were found");
         } else {
-            LOGGER.info("Were found: " + storage.findBySpecification(specification).size() + " figures");
+            LOGGER.info("Were found: " + foundFigures.size() + " figures");
         }
-        return storage.findBySpecification(specification);
+        return foundFigures;
     }
 
     public List<T> findBy(Predicate<T> p) {

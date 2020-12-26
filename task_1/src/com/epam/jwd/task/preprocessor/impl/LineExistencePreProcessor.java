@@ -14,6 +14,9 @@ public class LineExistencePreProcessor implements ExistencePreProcessor {
     @Override
     public void preProcess(List<Point> points) throws FigureException {
         Set<Point> compressPoints = new HashSet<>(points);
+        if (points.size() < 2) {
+            throw new FigureNotExistException("Line was NOT created. There are only " + points.size() + " points");
+        }
         if (compressPoints.size() != points.size()) {
             throw new FigureNotExistException("Line: " +
                     points.get(0).toString() + ", " +
