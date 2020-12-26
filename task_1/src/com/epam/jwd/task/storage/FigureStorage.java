@@ -23,25 +23,25 @@ public class FigureStorage<T extends Figure> {
 
     public List<T> find(T figure) {
         return figureStorage.stream()
-                .filter(f -> f.getPoints().equals(figure.getPoints()))
-                .collect(Collectors.toList());
+                            .filter(f -> f.getPoints().equals(figure.getPoints()))
+                            .collect(Collectors.toList());
     }
 
     public Optional<T> findById(UUID id) {
         return figureStorage.stream()
-                .filter(f -> f.getId().equals(id))
-                .findFirst();
+                            .filter(f -> f.getId().equals(id))
+                            .findFirst();
     }
 
     public List<T> findBySpecification(Specification specification) {
         return figureStorage.stream()
-                .filter(specification::matches)
-                .collect(Collectors.toList());
+                            .filter(specification::matches)
+                            .collect(Collectors.toList());
     }
 
     public List<T> findBy(Predicate<T> p) {
         return figureStorage.stream()
-                .filter(p)
-                .collect(Collectors.toList());
+                            .filter(p)
+                            .collect(Collectors.toList());
     }
 }
