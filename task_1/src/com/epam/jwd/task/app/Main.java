@@ -19,26 +19,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
-
-    private static final List<Integer> X_POINT_COORDINATES = Arrays.asList(-1, -1, -10, -10);
-    private static final List<Integer> Y_POINT_COORDINATES = Arrays.asList(-4, -3, -40, -30);
-
-    private static final List<Integer> X_LINE_COORDINATES = Arrays.asList(-1, -1, -1, -1, -3, -2);
-    private static final List<Integer> Y_LINE_COORDINATES = Arrays.asList(-4, -3, -4, -3, -3, -3);
-
-    private static final List<Integer> X_TRIANGLE_COORDINATES = Arrays.asList(-4, 3, -2, -1, 8, 9);
-    private static final List<Integer> Y_TRIANGLE_COORDINATES = Arrays.asList(-2, -3, 2, -1, -8, -9);
-
-    private static final List<Integer> X_SQUARE_COORDINATES = Arrays.asList(1, 0, 1, 0);
-    private static final List<Integer> Y_SQUARE_COORDINATES = Arrays.asList(1, 1, 1, 0);
-
-    private static final List<Integer> X_PENTAGON_COORDINATES = Arrays.asList(1, 2, 3, 4, 5);
-    private static final List<Integer> Y_PENTAGON_COORDINATES = Arrays.asList(4, 3, 2, 1, 6);
 
     public static void main(String[] args) {
         try {
