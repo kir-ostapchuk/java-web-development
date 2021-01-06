@@ -1,7 +1,7 @@
 package com.epam.jwd.task.storage;
 
 import com.epam.jwd.task.model.Figure;
-import com.epam.jwd.task.specification.Specification;
+import com.epam.jwd.task.specification.SpecificationMatcher;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,7 +33,7 @@ public class FigureStorage<T extends Figure> {
                 .findFirst();
     }
 
-    public List<T> findBySpecification(Specification specification) {
+    public List<T> findBySpecification(SpecificationMatcher specification) {
         return figureStorage.stream()
                 .filter(specification::matches)
                 .collect(Collectors.toList());

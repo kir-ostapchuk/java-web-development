@@ -10,8 +10,8 @@ import com.epam.jwd.task.model.factory.impl.line.Line;
 import com.epam.jwd.task.model.factory.impl.line.LineFactory;
 import com.epam.jwd.task.model.factory.impl.square.Square;
 import com.epam.jwd.task.model.factory.impl.square.SquareFactory;
-import com.epam.jwd.task.specification.Specification;
-import com.epam.jwd.task.specification.SquareSpecification;
+import com.epam.jwd.task.specification.ComplexSpecification;
+import com.epam.jwd.task.specification.SimpleSpecification;
 import com.epam.jwd.task.storage.LineStorage;
 import com.epam.jwd.task.storage.SquareStorage;
 import org.apache.logging.log4j.LogManager;
@@ -39,9 +39,6 @@ public class Main {
             squareFigureCrud.create(Arrays.asList(new Point(1, 2), new Point(-1, 2), new Point(-1, 0), new Point(1, 0)),
                     "Test3",
                     Color.BROWN);
-            Specification specification = SquareSpecification.builder()
-                    .whereColor(Color.BROWN)
-                    .build();
 
             FigureCrud<Line> lineFigureCrud = new FigureCrud<>(new LineApplicationContext(),
                     LineFactory.INSTANCE,

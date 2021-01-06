@@ -8,7 +8,7 @@ import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.factory.FigureFactory;
 import com.epam.jwd.task.model.factory.impl.line.LineFactory;
-import com.epam.jwd.task.specification.Specification;
+import com.epam.jwd.task.specification.SpecificationMatcher;
 import com.epam.jwd.task.storage.FigureStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -67,7 +67,7 @@ public class FigureCrud<T extends Figure> {
         return storage.findById(id).orElseThrow(() -> new FigureNotExistException("No figure in the storage"));
     }
 
-    public List<T> findBySpecification(Specification specification) {
+    public List<T> findBySpecification(SpecificationMatcher specification) {
         List<T> foundFigures = storage.findBySpecification(specification);
         if (foundFigures.isEmpty()) {
             LOGGER.info("No figures were found");
