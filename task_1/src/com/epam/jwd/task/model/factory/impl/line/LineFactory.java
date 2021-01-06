@@ -1,8 +1,8 @@
 package com.epam.jwd.task.model.factory.impl.line;
 
-import com.epam.jwd.task.model.factory.FigureFactory;
-import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.model.Point;
+import com.epam.jwd.task.model.factory.FigureFactory;
 import com.epam.jwd.task.storage.LineStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

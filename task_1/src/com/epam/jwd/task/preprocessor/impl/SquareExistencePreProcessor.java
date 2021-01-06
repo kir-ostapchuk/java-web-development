@@ -25,7 +25,7 @@ public class SquareExistencePreProcessor implements ExistencePreProcessor {
                     points.get(2).toString() + ", " +
                     points.get(3).toString() + " was NOT created. There are equal points");
         }
-        if (!isSquare(points)){
+        if (!isSquare(points)) {
             throw new FigureNotExistException("Square: " +
                     points.get(0).toString() + ", " +
                     points.get(1).toString() + ", " +

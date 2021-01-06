@@ -1,11 +1,11 @@
 package com.epam.jwd.task.decorator;
 
-import com.epam.jwd.task.preprocessor.ExistencePreProcessor;
 import com.epam.jwd.task.exception.FigureException;
+import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.factory.FigureFactory;
-import com.epam.jwd.task.model.Color;
+import com.epam.jwd.task.preprocessor.ExistencePreProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

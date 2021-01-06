@@ -1,8 +1,8 @@
 package com.epam.jwd.task.model.factory.impl.square;
 
+import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
-import com.epam.jwd.task.model.Color;
 
 import java.util.List;
 

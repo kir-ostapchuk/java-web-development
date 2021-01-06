@@ -18,11 +18,11 @@ public class TriangleSpecification implements Specification {
     private final Integer greaterPerimeter;
 
     private TriangleSpecification(String name,
-                          String startName,
-                          Color color,
-                          Double greaterArea,
-                          Double lessArea,
-                          Integer greaterPerimeter) {
+                                  String startName,
+                                  Color color,
+                                  Double greaterArea,
+                                  Double lessArea,
+                                  Integer greaterPerimeter) {
         this.name = name;
         this.startName = startName;
         this.color = color;

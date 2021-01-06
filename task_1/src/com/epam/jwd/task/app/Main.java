@@ -2,14 +2,14 @@ package com.epam.jwd.task.app;
 
 import com.epam.jwd.task.context.impl.LineApplicationContext;
 import com.epam.jwd.task.context.impl.SquareApplicationContext;
+import com.epam.jwd.task.crud.FigureCrud;
 import com.epam.jwd.task.exception.FigureException;
+import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.factory.impl.line.Line;
 import com.epam.jwd.task.model.factory.impl.line.LineFactory;
 import com.epam.jwd.task.model.factory.impl.square.Square;
 import com.epam.jwd.task.model.factory.impl.square.SquareFactory;
-import com.epam.jwd.task.crud.FigureCrud;
-import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.specification.Specification;
 import com.epam.jwd.task.specification.SquareSpecification;
 import com.epam.jwd.task.storage.LineStorage;

@@ -8,7 +8,7 @@ import com.epam.jwd.task.model.factory.impl.square.Square;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SquareSpecification implements Specification{
+public class SquareSpecification implements Specification {
 
     private final String name;
     private final String startName;

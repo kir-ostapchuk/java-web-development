@@ -3,10 +3,10 @@ package com.epam.jwd.task.crud;
 import com.epam.jwd.task.context.ApplicationContext;
 import com.epam.jwd.task.exception.FigureException;
 import com.epam.jwd.task.exception.FigureNotExistException;
+import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.model.Figure;
 import com.epam.jwd.task.model.Point;
 import com.epam.jwd.task.model.factory.FigureFactory;
-import com.epam.jwd.task.model.Color;
 import com.epam.jwd.task.model.factory.impl.line.LineFactory;
 import com.epam.jwd.task.specification.Specification;
 import com.epam.jwd.task.storage.FigureStorage;
@@ -64,8 +64,7 @@ public class FigureCrud<T extends Figure> {
     }
 
     public T findById(UUID id) throws FigureNotExistException {
-        return storage.findById(id)
-                .orElseThrow(() -> new FigureNotExistException("No figure in the storage"));
+        return storage.findById(id).orElseThrow(() -> new FigureNotExistException("No figure in the storage"));
     }
 
     public List<T> findBySpecification(Specification specification) {
